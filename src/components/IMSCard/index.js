@@ -131,7 +131,7 @@ export default function IMSCard(props) {
              Add</IconButton>
              <CartComponent></CartComponent>      
                      
-             <Rating name="half-rating" defaultValue={0} precision={0.5} />
+             {/*<Rating name="half-rating" defaultValue={0} precision={0.5} />*/}
              <IMSChip label={rating} color={color}/>
       </CardContent>         
      </Card>

@@ -70,7 +70,7 @@ function IMSNavbar(props) {
               textDecoration: 'none',
             }}
           >
-            WINNI
+            LOGO
           </Typography>
           <Box sx={{backgroundColor:'white'}}>
            <IMSSearch/>
