@@ -1,37 +1,37 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import { Link } from 'react-router-dom';
-import IMSSearch from '../IMSSearch';
-import CartComponent from '../CartComponent';
-import { useSelector } from 'react-redux';
-import CartPage from '../../pages/CartPage';
-
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import AdbIcon from "@mui/icons-material/Adb";
+import { Link } from "react-router-dom";
+import IMSSearch from "../IMSSearch";
+import CartComponent from "../CartComponent";
+import { useSelector } from "react-redux";
+import CartPage from "../../pages/CartPage";
 
 //const pages = ['Cakes', 'IceCreams', 'Flowers','Chocolates','Gifts','Plants'];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function IMSNavbar(props) {
-  let noOfCakes = useSelector((state)=>state.cake.noOfOrdered);
-  let noOfChocolates= useSelector((state)=>state.chocolates.noOfOrdered);
-  let noOfIcecreams = useSelector((state)=>state.icecream.noOfOrdered);
-  let noOfFlowers = useSelector((state)=>state.flowers.noOfOrdered);
-  let noOfGifts = useSelector((state)=>state.gifts.noOfOrdered);
-  let sum=noOfCakes+noOfChocolates+noOfFlowers+noOfGifts+noOfIcecreams;
-  const pages = props.pages
-  const settings = props.settings
-  
+  let noOfCakes = useSelector((state) => state.cake.noOfOrdered);
+  let noOfChocolates = useSelector((state) => state.chocolates.noOfOrdered);
+  let noOfIcecreams = useSelector((state) => state.icecream.noOfOrdered);
+  let noOfFlowers = useSelector((state) => state.flowers.noOfOrdered);
+  let noOfGifts = useSelector((state) => state.gifts.noOfOrdered);
+  let sum =
+    noOfCakes + noOfChocolates + noOfFlowers + noOfGifts + noOfIcecreams;
+  const pages = props.pages;
+  const settings = props.settings;
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -52,9 +52,13 @@ function IMSNavbar(props) {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl" style={{backgroundImage:'linear-gradient(to left, #9999ff 0%, #ff33cc 100%)'}}>
+      <Container
+        maxWidth="xl"
+        style={{
+          backgroundImage: "linear-gradient(to left, #9999ff 0%, #ff33cc 100%)",
+        }}
+      >
         <Toolbar disableGutters>
-          
           <Typography
             variant="h6"
             noWrap
@@ -62,20 +66,20 @@ function IMSNavbar(props) {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             BAKERY
           </Typography>
-          <Box sx={{backgroundColor:'white'}}>
-           <IMSSearch/>
+          <Box sx={{ backgroundColor: "white" }}>
+            <IMSSearch />
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -90,97 +94,90 @@ function IMSNavbar(props) {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
-                <Link to = {page} style={{textDecoration:'none'}}>
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+                <Link to={page} style={{ textDecoration: "none" }}>
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </MenuItem>
                 </Link>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Link to = "/" style={{textDecoration:"none"}}>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            BAKERY
-          </Typography>
+          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href=""
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              BAKERY
+            </Typography>
           </Link>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Link to = {page} style={{textDecoration:'none'}}>
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-                
-              </Button>
-              
+              <Link to={page} style={{ textDecoration: "none" }}>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
               </Link>
-            
             ))}
-          
-            
-               
           </Box>
-          < Box sx ={{marginRight:'40px'}}>
-            <Link to='CartPage'>
-            <CartComponent badgeContent = {sum}/>
-
+          <Box sx={{ marginRight: "40px" }}>
+            <Link to="CartPage">
+              <CartComponent badgeContent={sum} />
             </Link>
-           </Box>
+          </Box>
           <Box sx={{ flexGrow: 0 }}>
-          
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Jhansi" 
-                  src="https://img.freepik.com/premium-vector/female-baker_82446-24.jpg?w=2000" />
+                <Avatar
+                  alt="Jhansi"
+                  src="https://img.freepik.com/premium-vector/female-baker_82446-24.jpg?w=2000"
+                />
               </IconButton>
-              
             </Tooltip>
-            
+
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
@@ -188,9 +185,7 @@ function IMSNavbar(props) {
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
-          
-              </MenuItem>
-            
+                </MenuItem>
               ))}
             </Menu>
           </Box>

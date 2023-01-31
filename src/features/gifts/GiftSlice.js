@@ -1,27 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    numOfGifts:50,
-    noOfOrdered:0
-    
-}
+  numOfGifts: 50,
+  noOfOrdered: 0,
+};
 const giftSlice = createSlice({
-    name:'gifts',
-    initialState,
-    reducers:{
-        ordered:(state,action)=>{
-            if(state.numOfGifts < action.payload){
-                console.log('out of stack');
-            }
-            else{
-            state.numOfGifts -= action.payload.qty;
-            state.noOfOrdered +=parseInt(action.payload.qty)
-            }
-        },
-        restocked:(state,action)=>{
-            state.numOfGifts += action.payload
-        }
-    }
-})
+  name: "gifts",
+  initialState,
+  reducers: {
+    ordered: (state, action) => {
+      if (state.numOfGifts < action.payload) {
+        console.log("out of stack");
+      } else {
+        state.numOfGifts -= action.payload.qty;
+        state.noOfOrdered += parseInt(action.payload.qty);
+      }
+    },
+    restocked: (state, action) => {
+      state.numOfGifts += action.payload;
+    },
+  },
+});
 export default giftSlice.reducer;
-export const {ordered,restocked} = giftSlice.actions;
+export const { ordered, restocked } = giftSlice.actions;

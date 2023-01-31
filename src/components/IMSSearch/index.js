@@ -1,6 +1,6 @@
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
+import * as React from "react";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
 
 export default function IMSSearch() {
   return (
@@ -14,14 +14,11 @@ export default function IMSSearch() {
   );
 }
 
-
 const Gifts = [
-  { label: 'cakes' },
-  { label: 'icecreams' },
-  { label: 'gifts' },
-  { label: 'plants' },
-  { label: 'chocolates' },
-  { label: 'flowers'},
- 
- 
+  { label: "cakes" },
+  { label: "icecreams" },
+  { label: "gifts" },
+  { label: "plants" },
+  { label: "chocolates" },
+  { label: "flowers" },
 ];
