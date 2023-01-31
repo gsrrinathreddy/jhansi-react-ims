@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 export default function Cakes() {
   //const noOfCakes = useSelector((state)=>state.cake.numOfCakes);
-  //console.log('no of cakes', noOfCakes);
+  console.log("no of cakes", noOfCakes);
 
   return (
     <>
