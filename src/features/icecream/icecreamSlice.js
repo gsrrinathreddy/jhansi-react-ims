@@ -13,8 +13,8 @@ const icecreamSlice = createSlice({
                 console.log('out of stack');
             }
             else{
-            state.numOfIcecream -= action.payload;
-            state.noOfOrdered +=parseInt(action.payload)
+            state.numOfIcecream -= action.payload.qty;
+            state.noOfOrdered +=parseInt(action.payload.qty)
             }
         },
         restock:(state,action)=>{

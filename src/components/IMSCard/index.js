@@ -47,6 +47,9 @@ export default function IMSCard(props) {
   let sellingStatus = props.sellingStatus
   let color = "warning";
   let rating = props.rating
+  let discount=actualprice-offerprice;
+  let discountedPercentage=Math.floor((discount/actualprice)*100);
+  let dpoff=discountedPercentage+"% off ";
   const [expanded, setExpanded] = React.useState(false);
   let [qty,setQty]=useState(1);
   let dispatch=useDispatch()
@@ -72,7 +75,7 @@ export default function IMSCard(props) {
     }
 
   return (
-    <Card sx={{ maxWidth: 360 , marginLeft :'20px', bgcolor:'beige', marginRight:'20px',marginTop:'20px' }}>
+    <Card sx={{ maxWidth: 360 , marginLeft :'20px', bgcolor:'beige', marginRight:'20px',marginTop:'40px' }}>
       <CardHeader 
            title={title}
            />
@@ -83,21 +86,27 @@ export default function IMSCard(props) {
             <Box sx={{position: "absolute",alignItems:'flex-end', color: "white",top: 10,left: "83%", 
                  transform: "translateX(-51%)",}}>
                <Stack spacing={2} >
-                <Chip label={sellingStatus}
+                  <Chip label={sellingStatus}
                     color='success' />
+                
                 </Stack>
-                </Box>
+              </Box> 
               </Box>
+              
               </CardMedia>
          <CardContent> 
-              <Typography  style={{textDecorationLine:'line-through'}}>Actual Price:
-                  ₹{actualprice}
-             </Typography>
-             <Typography variant='h6'>Offer Price:
+              
+             <Typography variant='h4'>
                  ₹{offerprice}
+              </Typography> 
+              <Typography  style={{textDecorationLine:'line-through'}}>
+                    ₹{actualprice}
               </Typography>
-               <br></br>
-                  <TextField label="qty" variant="filled"
+                  <Chip label={dpoff}
+                      color='primary' />  
+              <br></br>
+          
+              <TextField label="qty" variant="filled"
                    color="success"  
                    defaultValue={0} onChange={(e)=>setQty(e.currentTarget.value)} />
               
@@ -120,11 +129,10 @@ export default function IMSCard(props) {
             }}> 
             
              Add</IconButton>
-             <CartComponent></CartComponent>
-             
-               <Chip label={rating} color="warning"/>
-                   <Rating name="half-rating" defaultValue={0} precision={0.5} />             
-           
+             <CartComponent></CartComponent>      
+                     
+             <Rating name="half-rating" defaultValue={0} precision={0.5} />
+             <IMSChip label={rating} color={color}/>
       </CardContent>         
      </Card>
   );

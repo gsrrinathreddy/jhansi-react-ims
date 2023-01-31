@@ -14,8 +14,8 @@ const cakeSlice = createSlice({
                 console.log('out of stack');
             }
             else{
-            state.numOfCakes -= action.payload;
-            state.noOfOrdered +=parseInt(action.payload)
+            state.numOfCakes -= action.payload.qty;
+            state.noOfOrdered +=parseInt(action.payload.qty)
             }
         
         },

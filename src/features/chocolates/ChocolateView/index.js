@@ -52,7 +52,7 @@ export default function ChocolateView() {
         title:'Ferrerorocher Chocolates',
         photo:ferrerorocherchocolates,
         actualprice:299,
-        offerprice:159,
+        offerprice:289,
         sellingStatus:'Premium',
         rating:4.5
       },

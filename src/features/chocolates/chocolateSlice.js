@@ -14,8 +14,8 @@ const chocolateSlice = createSlice({
                 console.log('out of stack');
             }
             else{
-            state.numOfChocolates -= action.payload;
-            state.noOfOrdered +=parseInt(action.payload)
+            state.numOfChocolates -= action.payload.qty;
+            state.noOfOrdered +=parseInt(action.payload.qty)
             }
         },
         restocked:(state,action)=>{

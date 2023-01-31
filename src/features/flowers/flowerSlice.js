@@ -14,8 +14,8 @@ const flowerSlice = createSlice({
                 console.log('out of stack');
             }
             else{
-            state.numOfFlowers -= action.payload;
-            state.noOfOrdered +=parseInt(action.payload)
+            state.numOfFlowers -= action.payload.qty;
+            state.noOfOrdered +=parseInt(action.payload.qty)
             }
         },
         restock:(state,action)=>{

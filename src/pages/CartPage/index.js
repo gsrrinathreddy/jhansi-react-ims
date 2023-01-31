@@ -7,6 +7,7 @@ export default function CartPage() {
     const cartList = useSelector((state)=>state.cart.cartList);
     console.log(cartList)
     const navigate = useNavigate();
+    let sum=0;
     return(
         <> 
           <Box>
@@ -67,23 +68,33 @@ export default function CartPage() {
                           })
                        } 
                 </Grid>
-            </Grid>
+            <Grid md={2}>
+             
             <Typography variant="h6" sx={{fontWeight:'bold'}}>
                Total
             </Typography>
             {
               cartList.map((item)=>{
+                sum += item.offerprice*item.qty
                 return(
                   <Typography>
                     {item.qty*item.offerprice}
                   </Typography>
+                  
                 )
               })
             }
+              Total Account : {sum}
+            </Grid>
+            </Grid>
+          
+             <Button onClick={()=>navigate('order successful')}
+                 variant="contained">
+                 Place Order
+           </Button>
+          
+          
           </Box>
-          <Button onClick={()=>navigate('order-summary')}>
-            Place Order
-          </Button>
           
         </>
     )

@@ -37,7 +37,7 @@ export default function FlowersView() {
         title:'Gerberas Flowers',
         photo:gerberas,
         actualprice:350,
-        offerprice:243,
+        offerprice:293,
         sellingStatus:'Best Seller',
         rating:3.5
       },

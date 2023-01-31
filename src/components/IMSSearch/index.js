@@ -9,7 +9,7 @@ export default function IMSSearch() {
       id="combo-box-demo"
       options={Gifts}
       sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Search for gifts" />}
+      renderInput={(params) => <TextField {...params} label="Search" />}
     />
   );
 }

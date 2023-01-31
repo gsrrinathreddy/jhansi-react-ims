@@ -61,7 +61,7 @@ export default function GiftView() {
         title:'Crystal Tree Gift',
         photo:crystaltreegift,
         actualprice:200,
-        offerprice:199,
+        offerprice:197,
         sellingStatus:'Best Seller',
         rating:4
       },

@@ -14,8 +14,8 @@ const giftSlice = createSlice({
                 console.log('out of stack');
             }
             else{
-            state.numOfGifts -= action.payload;
-            state.noOfOrdered +=parseInt(action.payload)
+            state.numOfGifts -= action.payload.qty;
+            state.noOfOrdered +=parseInt(action.payload.qty)
             }
         },
         restocked:(state,action)=>{
