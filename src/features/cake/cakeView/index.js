@@ -72,7 +72,7 @@ export default function CakeView() {
         offerprice:350,
         actualprice:400,
         sellingStatus:'Best Seller',
-        rating:4.3
+        rating:3.5
       },
       {
         title:'Pineapple Cake',
@@ -80,7 +80,7 @@ export default function CakeView() {
         offerprice:250,
         actualprice:300,
         sellingStatus:'Premium',
-        rating:3.8
+        rating:4
       },
       {
         title:'Kitkat Cake',
@@ -88,7 +88,7 @@ export default function CakeView() {
         offerprice:200,
         actualprice:250,
         sellingStatus:'Best Seller',
-        rating:3.2
+        rating:3.5
       },
       //{
        // title:<h1>Disgined Cake</h1>,
@@ -109,7 +109,7 @@ export default function CakeView() {
         offerprice:450,
         actualprice:490,
         sellingStatus:'Premium',
-        rating:3.1
+        rating:3
       },
       {
         title:'Chocoslice Cake',
@@ -117,7 +117,7 @@ export default function CakeView() {
         offerprice:502,
         actualprice:610,
         sellingStatus:'Best Seller',
-        rating:3.2
+        rating:3.5
       },
       {
         title:'Anniversary Cake',
@@ -132,7 +132,8 @@ export default function CakeView() {
         photo:oreocake,
         offerprice:300,
         actualprice:300,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4.5
       },
       {
         title:'Kitty Cake',

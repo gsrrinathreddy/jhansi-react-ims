@@ -29,56 +29,64 @@ export default function ChocolateView() {
         photo:cadburysilkchocolate,
         actualprice:200,
         offerprice:149,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4
       },
       {
         title:'Choclairs Chocolates',
         photo:choclairschocolate,
         actualprice:20,
         offerprice:15,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:3.5
       },
       {
         title:'Dairy Milk Chocolates',
         photo:dairymilkchocolate,
         actualprice:100,
         offerprice:89,
-        sellingStatus:'Premium'
+        sellingStatus:'Premium',
+        rating:4.5
       },
       {
         title:'Ferrerorocher Chocolates',
         photo:ferrerorocherchocolates,
         actualprice:299,
         offerprice:159,
-        sellingStatus:'Premium'
+        sellingStatus:'Premium',
+        rating:4.5
       },
       {
         title:'Fuse Chocolates',
         photo:fusechocolate,
         actualprice:30,
         offerprice:25,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4
       },
       {
         title:'Kitkat Chocolates',
         photo:kitkatchocolate,
         actualprice:200,
         offerprice:197,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4
       },
       {
         title:'Mars Chocolates',
         photo:marschocolate,
         actualprice:150,
         offerprice:139,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:3.5
       },
       {
         title:'Oreo Silk Chocolates',
         photo:oreosilkchocolates,
         actualprice:180,
         offerprice:166,
-        sellingStatus:'Premiem'
+        sellingStatus:'Premiem',
+        rating:4
       },
       
       {
@@ -86,14 +94,16 @@ export default function ChocolateView() {
         photo:snickerschocolate,
         actualprice:60,
         offerprice:49,
-        sellingStatus:'Premium'
+        sellingStatus:'Premium',
+        rating:4.5
        },
        {
         title:'Toblerone Chocolates',
         photo:tobleronechocolate,
         actualprice:25,
         offerprice:19,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:3
        },
       ]
     
@@ -128,7 +138,8 @@ export default function ChocolateView() {
                            ordername={ordername}
                            offerprice={item.offerprice}
                            actualprice={item.actualprice}
-                           sellingStatus={item.sellingStatus}>
+                           sellingStatus={item.sellingStatus}
+                           rating={item.rating}>
                   </IMSCard>
                   </Grid>
                 )

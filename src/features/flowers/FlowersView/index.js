@@ -30,84 +30,96 @@ export default function FlowersView() {
         photo:combo,
         actualprice:300,
         offerprice:279,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4
       },
       {
         title:'Gerberas Flowers',
         photo:gerberas,
         actualprice:350,
         offerprice:243,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:3.5
       },
       {
         title:'Light Rose Flowers',
         photo:lightrose,
         actualprice:400,
         offerprice:395,
-        sellingStatus:'Premium'
+        sellingStatus:'Premium',
+        rating:4.5
       },
       {
         title:'Mixed Flowers',
         photo:mixed,
         actualprice:350,
         offerprice:347,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4
       },
       {
         title:'MixRoses Flowers',
         photo:mixrose,
         actualprice:450,
         offerprice:448,
-        sellingStatus:'Premium'
+        sellingStatus:'Premium',
+        rating:4.5
       },
       {
         title:'Pink Roses Flowers',
         photo:pinkrose,
         actualprice:250,
         offerprice:237,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4.5
       },
       {
         title:'Pink Villa Flowers',
         photo:pinkvilla,
         actualprice:150,
         offerprice:147,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4
       },
       {
         title:'Red Blossom Flowers',
         photo:redblossom,
         actualprice:180,
         offerprice:169,
-        sellingStatus:'Premium'
+        sellingStatus:'Premium',
+        rating:4.5
        },
       {
         title:'Rose Flowers',
         photo:rose,
         actualprice:100,
         offerprice:96,
-        sellingStatus:'Premium'
+        sellingStatus:'Premium',
+        rating:4
       },
       {
         title:'Roses Flowers',
         photo:roses,
         actualprice:99,
         offerprice:93,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4.5
       },
       {
         title:'White Roses Flowers',
         photo:whiteroses,
         actualprice:199,
         offerprice:193,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4.5
       },
       {
         title:'Yellow Flowers',
         photo:yellow,
         actualprice:150,
         offerprice:147,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:3.5
       },
     ]
     const [open, setOpen] = React.useState(false);
@@ -141,7 +153,8 @@ export default function FlowersView() {
                            ordername={ordername}
                            offerprice={item.offerprice}
                            actualprice={item.actualprice}
-                           sellingStatus={item.sellingStatus}>
+                           sellingStatus={item.sellingStatus}
+                           rating={item.rating}>
                   </IMSCard>
                   </Grid>
                 )

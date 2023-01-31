@@ -30,49 +30,56 @@ export default function GiftView() {
         photo:bullockcartgift,
         actualprice:300,
         offerprice:293,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4
       },
       {
         title:'Cashew Combo Gift',
         photo:cashewcombogift,
         actualprice:500,
         offerprice:497,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4.5
       },
       {
         title:'Ceramic Mug Gift',
         photo:ceramicmuggift,
         actualprice:300,
         offerprice:297,
-        sellingStatus:'Premium'
+        sellingStatus:'Premium',
+        rating:3.5
       },
       {
         title:'Couple Lamp Gift',
         photo:couplelampgift,
         actualprice:500,
         offerprice:498,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4.5
       },
       {
         title:'Crystal Tree Gift',
         photo:crystaltreegift,
         actualprice:200,
         offerprice:199,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4
       },
       {
         title:'Glass Gift ',
         photo:glassgift,
         actualprice:150,
         offerprice:148,
-        sellingStatus:'Premium'
+        sellingStatus:'Premium',
+        rating:3.5
       },
       {
         title:'Light Lamp Gift',
         photo:lampgift,
         actualprice:100,
         offerprice:98,
-        sellingStatus:'Premium'
+        sellingStatus:'Premium',
+        rating:3
       },
       
       {
@@ -80,14 +87,16 @@ export default function GiftView() {
         photo:leatherbaggift,
         actualprice:350,
         offerprice:348,
-        sellingStatus:'Premium'
+        sellingStatus:'Premium',
+        rating:2.5
        },
       {
         title:'Lord Krishna Gift',
         photo:lordkrishnagift,
         actualprice:400,
         offerprice:396,
-        sellingStatus:'Best Seller'
+        sellingStatus:'Best Seller',
+        rating:4
       },
     ]
     const [open, setOpen] = React.useState(false);
@@ -125,7 +134,7 @@ export default function GiftView() {
                             offerprice={item.offerprice}
                             actualprice={item.actualprice}
                             sellingStatus={item.sellingStatus}
-                            >
+                            rating={item.rating}>
                        </IMSCard>
                        </Grid>
                       )
