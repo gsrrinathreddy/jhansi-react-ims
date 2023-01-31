@@ -97,16 +97,17 @@ export default function IMSCard(props) {
               </Box>
               
               </CardMedia>
-         <CardContent> 
-              
+         <CardContent disableSpacing> 
+              <Stack direction="row" spacing={1}>
              <Typography variant='h4'>
                  ₹{offerprice}
               </Typography> 
-              <Typography  style={{textDecorationLine:'line-through'}}>
+              <Typography   variant = "h5" style={{textDecorationLine:'line-through'}}>
                     ₹{actualprice}
               </Typography>
                   <Chip label={dpoff}
                       color='primary' />  
+              </Stack>
               <br></br>
           
               <TextField label="qty" variant="filled"
@@ -119,11 +120,11 @@ export default function IMSCard(props) {
             }}> 
             
              Add</IconButton>
-             <CartComponent/>    
+             <CartComponent badgeContent = {qty}/>    
 
-              <IMSChip label={rating} color={color}/>      
+                    
              <Rating name="half-rating" defaultValue={0} precision={0.5} />
-             
+             <IMSChip label={rating} color={color}/>
       </CardContent>         
      </Card>
   );

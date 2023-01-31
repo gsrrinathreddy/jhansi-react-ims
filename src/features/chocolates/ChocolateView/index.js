@@ -109,18 +109,7 @@ export default function ChocolateView() {
     
     const [open, setOpen] = React.useState(false);
 
-    const handleClick = () => {
-        dispatch(ordered(1))
-      setOpen(true);
-    };
-  
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-  
-      setOpen(false);
-    };
+    
    let ordername="chocolates"
     
     return(
@@ -147,22 +136,7 @@ export default function ChocolateView() {
           }
           </Grid> 
           </Box>
-            {/*<Button variant="contained" onClick={handleClick}>
-               Order Chocolates
-           </Button>
-           <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-           <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                  Successfully add to cart!
-            </Alert>
-           </Snackbar>
            
-           <Button variant='contained'
-                onClick={()=>{
-                    dispatch(restocked(10))
-                    
-                }}>
-                Restock Chocolates
-              </Button>*/}
             <br/>
             <br/>
         </>  

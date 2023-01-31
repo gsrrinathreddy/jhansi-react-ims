@@ -122,20 +122,7 @@ export default function FlowersView() {
         rating:3.5
       },
     ]
-    const [open, setOpen] = React.useState(false);
-
-    const handleClick = () => {
-        dispatch(ordered(1))
-      setOpen(true);
-    };
-  
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-  
-      setOpen(false);
-    };
+    
     let ordername='flowers'
 
     return(
@@ -163,21 +150,7 @@ export default function FlowersView() {
              }
           </Grid> 
           </Box>
-           {/*<Button variant="contained" onClick={handleClick}>
-               Order Flowers
-           </Button>
-           <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-           <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                   Successfully add to cart!
-            </Alert>
-           </Snackbar>
-            
-            <Button variant="contained"
-                 onClick={()=>{
-                    dispatch(restock(10))
-                 }}>
-                   Restock Flowers
-                </Button>*/}
+           
             <br/>
 
         </>

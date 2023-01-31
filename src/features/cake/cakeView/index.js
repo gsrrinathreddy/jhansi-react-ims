@@ -193,20 +193,20 @@ export default function CakeView() {
       },
     ]
     
-    const [open, setOpen] = React.useState(false);
+    // {*/const [open, setOpen] = React.useState(false);
 
-    const handleClick = () => {
-        dispatch(ordered(1))
-      setOpen(true);
-    };
+    // const handleClick = () => {
+    //     dispatch(ordered())
+    //   setOpen(true);
+    // };
   
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
+    // const handleClose = (event, reason) => {
+    //   if (reason === 'clickaway') {
+    //     return;
+    //   }
   
-      setOpen(false);
-    };
+    //   setOpen(false);
+    // }*/}
 let ordername="cake"
 
 return(
@@ -240,11 +240,7 @@ return(
            {/*<Button variant="contained" onClick={handleClick}>
                Order Cakes
            </Button>*/}
-           <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-           <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                   Successfully add to cart!
-            </Alert>
-           </Snackbar>
+           
         
            {/*<Button variant='contained' 
                 onClick={()=>{

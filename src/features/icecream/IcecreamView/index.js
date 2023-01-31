@@ -109,20 +109,7 @@ export default function IcecreamView() {
       },
      
     ]
-    const [open, setOpen] = React.useState(false);
-
-    const handleClick = () => { 
-        dispatch(orderice(1))
-      setOpen(true);
-    };
-  
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-  
-      setOpen(false);
-    };
+    
     let ordername="icecream"
 
     return(
@@ -155,21 +142,7 @@ export default function IcecreamView() {
              </Box>
           
           
-          {/*<Button variant="contained" onClick={handleClick}>
-               Order IceCream
-           </Button>
-           <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-           <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                  Successfully add to cart!
-            </Alert>
-           </Snackbar>
-            
-            <Button variant="contained"
-                 onClick={()=>{
-                    dispatch(restock(10))
-                 }}>
-                   Restock IceCream
-                </Button>*/}
+          
             <br/>
 
         </>

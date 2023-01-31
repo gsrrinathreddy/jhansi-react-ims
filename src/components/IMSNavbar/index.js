@@ -70,7 +70,7 @@ function IMSNavbar(props) {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            BAKERY
           </Typography>
           <Box sx={{backgroundColor:'white'}}>
            <IMSSearch/>
@@ -114,6 +114,7 @@ function IMSNavbar(props) {
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Link to = "/" style={{textDecoration:"none"}}>
           <Typography
             variant="h5"
             noWrap
@@ -130,9 +131,9 @@ function IMSNavbar(props) {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            BAKERY
           </Typography>
-          
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Link to = {page} style={{textDecoration:'none'}}>

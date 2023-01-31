@@ -12,6 +12,7 @@ import Flowers from './pages/Flowers';
 import Chocolates from './pages/Chocolates';
 import Gifts from './pages/Gifts';
 import CartPage from './pages/CartPage';
+import Landingpage from './pages/Landingpage';
 function App() {
   let p1 = ['Cakes', 'IceCreams', 'Flowers','Chocolates','Gifts'];
   let p2 = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -31,6 +32,7 @@ function App() {
           <Route path = "/Chocolates" element={<Chocolates/>}/>
           <Route path = "/Gifts" element={<Gifts/>}/>
           <Route path = "/CartPage" element={<CartPage/>}/>
+          <Route path = "/" element={<Gifts/>}/>
 
                    {/*<h4>No Of Cakes
                    <CartComponent badgeContent = {noOfCakes}/></h4>
