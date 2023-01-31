@@ -112,7 +112,7 @@ export default function IMSCard(props) {
           
               <TextField label="qty" variant="filled"
                    color="success"  
-                   defaultValue={0} onChange={(e)=>setQty(e.currentTarget.value)} />
+                   defaultValue={1} onChange={(e)=>setQty(e.currentTarget.value)} />
               
               <IconButton aria-label="cart " sx={{color:'black'}} onClick={()=>{  
                dispatch(orderPlaced(params))
@@ -120,7 +120,7 @@ export default function IMSCard(props) {
             }}> 
             
              Add</IconButton>
-             <CartComponent badgeContent = {qty}/>    
+             <CartComponent/>    
 
                     
              <Rating name="half-rating" defaultValue={0} precision={0.5} />
