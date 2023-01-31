@@ -52,7 +52,7 @@ export default function IMSCard(props) {
   let dpoff=discountedPercentage+"% off ";
   let orderPlaced = props.order
   const [expanded, setExpanded] = React.useState(false);
-  let [qty,setQty]=useState(1);
+  let [qty,setQty]=useState(0);
   let dispatch=useDispatch()
   
 
@@ -112,7 +112,7 @@ export default function IMSCard(props) {
           
               <TextField label="qty" variant="filled"
                    color="success"  
-                   defaultValue={1} onChange={(e)=>setQty(e.currentTarget.value)} />
+                   defaultValue="0" value={qty} onChange={(e)=>setQty(e.currentTarget.value)} />
               
               <IconButton aria-label="cart " sx={{color:'black'}} onClick={()=>{  
                dispatch(orderPlaced(params))
@@ -120,7 +120,7 @@ export default function IMSCard(props) {
             }}> 
             
              Add</IconButton>
-             <CartComponent/>    
+             <CartComponent badgeContent={qty}/>    
 
                     
              <Rating name="half-rating" defaultValue={0} precision={0.5} />
