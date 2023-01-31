@@ -25,12 +25,12 @@ function App() {
           <IMSNavbar pages = {p1} settings = {p2}/>
           <Routes>
             
-          <Route path = "Cakes" element={<Cakes/>}/>
-          <Route path = "IceCreams" element={<IceCreams/>}/>
-          <Route path = "Flowers" element={<Flowers/>}/>
-          <Route path = "Chocolates" element={<Chocolates/>}/>
-          <Route path = "Gifts" element={<Gifts/>}/>
-          <Route path = "CartPage" element={<CartPage/>}/>
+          <Route path = "/Cakes" element={<Cakes/>}/>
+          <Route path = "/IceCreams" element={<IceCreams/>}/>
+          <Route path = "/Flowers" element={<Flowers/>}/>
+          <Route path = "/Chocolates" element={<Chocolates/>}/>
+          <Route path = "/Gifts" element={<Gifts/>}/>
+          <Route path = "/CartPage" element={<CartPage/>}/>
 
                    {/*<h4>No Of Cakes
                    <CartComponent badgeContent = {noOfCakes}/></h4>

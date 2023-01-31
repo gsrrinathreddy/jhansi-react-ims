@@ -1,12 +1,10 @@
 import CakeView from '../../features/cake/cakeView';
-import CartComponent from '../../components/CartComponent';
-import { useDispatch, useSelector } from 'react-redux';
-import IMSCake from '../../components/IMSCard';
+import { useSelector } from 'react-redux';
 
 export default function Cakes() {
      const noOfCakes = useSelector((state)=>state.cake.numOfCakes);
      console.log('no of cakes', noOfCakes);
-     const order=1;
+     
    
     return(
         <> 

@@ -64,6 +64,12 @@ export default function IMSCard(props) {
       color: '#ff3d47',
     },
   });
+  let params = {
+    title:title,
+     actualprice:actualprice,
+     offerprice:offerprice,
+     qty:parseInt(qty)
+    }
 
   return (
     <Card sx={{ maxWidth: 360 , marginLeft :'20px', bgcolor:'beige', marginRight:'20px',marginTop:'20px' }}>
@@ -96,20 +102,20 @@ export default function IMSCard(props) {
                    defaultValue={0} onChange={(e)=>setQty(e.currentTarget.value)} />
               
               <IconButton aria-label="cart " sx={{color:'black'}} onClick={()=>{ 
-               if(ordername==="cake"){ 
-               dispatch(cakeorder(qty))
+               if(ordername=="cake"){ 
+               dispatch(cakeorder(params))
               }
-                else if (ordername==="icecream") {
-                dispatch(icecreamorder(qty))
+                else if (ordername=="icecream") {
+                dispatch(icecreamorder(params))
               }
-               else if(ordername==="chocolates"){
-               dispatch(chocolatesorder(qty))
+               else if(ordername=="chocolates"){
+               dispatch(chocolatesorder(params))
               }
-                else if (ordername==="flowers"){
-                dispatch(flowersorder(qty))
+                else if (ordername=="flowers"){
+                dispatch(flowersorder(params))
               }
-                else if (ordername==="gifts"){
-                dispatch(giftsorder(qty))
+                else if (ordername=="gifts"){
+                dispatch(giftsorder(params))
               } 
             }}> 
             
