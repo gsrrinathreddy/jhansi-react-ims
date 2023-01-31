@@ -20,7 +20,7 @@ function App() {
   return (
     
     <div className="App">
-      <h1>Cake Store</h1>
+      <h1>Bakery Store </h1>
       <BrowserRouter>
           <IMSNavbar pages = {p1} settings = {p2}/>
           <Routes>

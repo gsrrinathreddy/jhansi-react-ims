@@ -4,6 +4,7 @@ const initialState = {
     numOfCakes : 50,
     noOfOrdered:0
     
+    
 }
 const cakeSlice = createSlice({
     name:'cake',
@@ -16,6 +17,7 @@ const cakeSlice = createSlice({
             else{
             state.numOfCakes -= action.payload.qty;
             state.noOfOrdered +=parseInt(action.payload.qty)
+            
             }
         
         },

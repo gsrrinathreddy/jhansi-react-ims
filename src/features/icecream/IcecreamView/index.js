@@ -1,5 +1,5 @@
 import { useDispatch, useSelecter } from "react-redux";
-import { ordered  as orderice, restock } from "../icecreamSlice";
+import { ordered, ordered  as orderice, restock } from "../icecreamSlice";
 import { Button } from "@mui/material";
 import * as React from 'react';
 import Snackbar from '@mui/material/Snackbar';
@@ -144,7 +144,8 @@ export default function IcecreamView() {
                            actualprice={item.actualprice}
                            offerprice={item.offerprice}
                            sellingStatus={item.sellingStatus}
-                           rating={item.rating}>
+                           rating={item.rating}
+                           order={ordered}>
                   </IMSCard>
                   </Grid>
                 )

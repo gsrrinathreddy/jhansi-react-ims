@@ -50,6 +50,7 @@ export default function IMSCard(props) {
   let discount=actualprice-offerprice;
   let discountedPercentage=Math.floor((discount/actualprice)*100);
   let dpoff=discountedPercentage+"% off ";
+  let orderPlaced = props.order
   const [expanded, setExpanded] = React.useState(false);
   let [qty,setQty]=useState(1);
   let dispatch=useDispatch()
@@ -90,6 +91,8 @@ export default function IMSCard(props) {
                     color='success' />
                 
                 </Stack>
+                    
+                 
               </Box> 
               </Box>
               
@@ -110,29 +113,17 @@ export default function IMSCard(props) {
                    color="success"  
                    defaultValue={0} onChange={(e)=>setQty(e.currentTarget.value)} />
               
-              <IconButton aria-label="cart " sx={{color:'black'}} onClick={()=>{ 
-               if(ordername=="cake"){ 
-               dispatch(cakeorder(params))
-              }
-                else if (ordername=="icecream") {
-                dispatch(icecreamorder(params))
-              }
-               else if(ordername=="chocolates"){
-               dispatch(chocolatesorder(params))
-              }
-                else if (ordername=="flowers"){
-                dispatch(flowersorder(params))
-              }
-                else if (ordername=="gifts"){
-                dispatch(giftsorder(params))
-              } 
+              <IconButton aria-label="cart " sx={{color:'black'}} onClick={()=>{  
+               dispatch(orderPlaced(params))
+        
             }}> 
             
              Add</IconButton>
-             <CartComponent></CartComponent>      
-                     
-             {/*<Rating name="half-rating" defaultValue={0} precision={0.5} />*/}
-             <IMSChip label={rating} color={color}/>
+             <CartComponent/>    
+
+              <IMSChip label={rating} color={color}/>      
+             <Rating name="half-rating" defaultValue={0} precision={0.5} />
+             
       </CardContent>         
      </Card>
   );

@@ -134,7 +134,8 @@ export default function GiftView() {
                             offerprice={item.offerprice}
                             actualprice={item.actualprice}
                             sellingStatus={item.sellingStatus}
-                            rating={item.rating}>
+                            rating={item.rating}
+                            order={ordered}>
                        </IMSCard>
                        </Grid>
                       )

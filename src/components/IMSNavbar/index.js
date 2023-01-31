@@ -105,9 +105,11 @@ function IMSNavbar(props) {
               }}
             >
               {pages.map((page) => (
+                <Link to = {page} style={{textDecoration:'none'}}>
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
@@ -133,7 +135,7 @@ function IMSNavbar(props) {
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Link to = {page}>
+              <Link to = {page} style={{textDecoration:'none'}}>
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
