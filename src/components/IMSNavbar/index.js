@@ -55,10 +55,11 @@ function IMSNavbar(props) {
       <Container
         maxWidth="xl"
         style={{
-          backgroundImage: "linear-gradient(to left, #9999ff 0%, #ff33cc 100%)",
+          backgroundImage: "linear-gradient(to right, indigo,orange )",
         }}
       >
         <Toolbar disableGutters>
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -76,7 +77,7 @@ function IMSNavbar(props) {
           >
             BAKERY
           </Typography>
-          <Box sx={{ backgroundColor: "white" }}>
+          <Box sx={{ backgroundColor: "none" }}>
             <IMSSearch />
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -117,7 +118,7 @@ function IMSNavbar(props) {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Link to="/" style={{ textDecoration: "none" }}>
             <Typography
               variant="h5"
@@ -183,9 +184,11 @@ function IMSNavbar(props) {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
+                <Link to={setting}>
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>

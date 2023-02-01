@@ -8,6 +8,7 @@ export default function CartPage() {
   console.log(cartList);
   const navigate = useNavigate();
   let sum = 0;
+
   return (
     <>
       <Box>
@@ -53,14 +54,11 @@ export default function CartPage() {
               sum += item.offerprice * item.qty;
               return <Typography>{item.qty * item.offerprice}</Typography>;
             })}
-            Total Account : {sum}
+            Total Amount : {sum}
           </Grid>
         </Grid>
 
-        <Button
-          onClick={() => navigate("order successful")}
-          variant="contained"
-        >
+        <Button onClick={() => navigate("order success")} variant="contained">
           Place Order
         </Button>
       </Box>

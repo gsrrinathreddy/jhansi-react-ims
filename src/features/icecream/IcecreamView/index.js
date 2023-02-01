@@ -33,6 +33,7 @@ export default function IcecreamView() {
       offerprice: 87,
       sellingStatus: "Best Seller",
       rating: 4.5,
+      delivery: "40min",
     },
     {
       title: "Chocobar Icecream",
@@ -40,7 +41,8 @@ export default function IcecreamView() {
       actualprice: 70,
       offerprice: 60,
       sellingStatus: "Premium",
-      rating: 4,
+      rating: 4.0,
+      delivery: "20min",
     },
     {
       title: "Chocolate Icecream",
@@ -48,7 +50,8 @@ export default function IcecreamView() {
       actualprice: 50,
       offerprice: 47,
       sellingStatus: "Premium",
-      rating: 4,
+      rating: 4.0,
+      delivery: "30min",
     },
     {
       title: "Choco Icecream",
@@ -57,6 +60,7 @@ export default function IcecreamView() {
       offerprice: 58,
       sellingStatus: "Premium",
       rating: 3.5,
+      delivery: "30min",
     },
     {
       title: "Cone Icecream",
@@ -64,7 +68,8 @@ export default function IcecreamView() {
       actualprice: 70,
       offerprice: 65,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "40min",
     },
     {
       title: "Nuts Icecream",
@@ -72,7 +77,8 @@ export default function IcecreamView() {
       actualprice: 80,
       offerprice: 78,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "20min",
     },
     {
       title: "Grape Icecream",
@@ -81,6 +87,7 @@ export default function IcecreamView() {
       offerprice: 46,
       sellingStatus: "Premium",
       rating: 4.5,
+      delivery: "30min",
     },
     {
       title: "Mango Icecream",
@@ -89,6 +96,7 @@ export default function IcecreamView() {
       offerprice: 35,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "20min",
     },
     {
       title: "Nabati Icecream",
@@ -97,6 +105,7 @@ export default function IcecreamView() {
       offerprice: 32,
       sellingStatus: "Premium",
       rating: 2.5,
+      delivery: "15min",
     },
     {
       title: "Vennila Icecream",
@@ -104,7 +113,8 @@ export default function IcecreamView() {
       actualprice: 60,
       offerprice: 53,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "30min",
     },
   ];
 
@@ -112,33 +122,30 @@ export default function IcecreamView() {
 
   return (
     <>
-      <Box sx={{ margin: "25px" }}>
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-          style={{ backgroundColor: "silver" }}
-        >
-          {icecreamList.map((item) => {
-            return (
-              <Grid item display="flex" justifyContent="center" xs={4}>
-                <IMSCard
-                  title={item.title}
-                  photo={item.photo}
-                  ordername={ordername}
-                  actualprice={item.actualprice}
-                  offerprice={item.offerprice}
-                  sellingStatus={item.sellingStatus}
-                  rating={item.rating}
-                  order={ordered}
-                ></IMSCard>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Box>
-
-      <br />
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+        style={{ backgroundColor: "lightgray" }}
+      >
+        {icecreamList.map((item) => {
+          return (
+            <Grid item display="flex" justifyContent="center" xs={4}>
+              <IMSCard
+                title={item.title}
+                photo={item.photo}
+                ordername={ordername}
+                actualprice={item.actualprice}
+                offerprice={item.offerprice}
+                sellingStatus={item.sellingStatus}
+                rating={item.rating}
+                order={ordered}
+                delivery={item.delivery}
+              ></IMSCard>
+            </Grid>
+          );
+        })}
+      </Grid>
     </>
   );
 }

@@ -27,6 +27,10 @@ import { ordered as icecreamorder } from "../../features/icecream/icecreamSlice"
 import { ordered as giftsorder } from "../../features/gifts/GiftSlice";
 import { ordered as chocolatesorder } from "../../features/chocolates/chocolateSlice";
 import { ordered as flowersorder } from "../../features/flowers/flowerSlice";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -37,6 +41,10 @@ const ExpandMore = styled((props) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 export default function IMSCard(props) {
   let title = props.title;
@@ -51,9 +59,23 @@ export default function IMSCard(props) {
   let discountedPercentage = Math.floor((discount / actualprice) * 100);
   let dpoff = discountedPercentage + "% off ";
   let orderPlaced = props.order;
+  let delivery = props.delivery;
   const [expanded, setExpanded] = React.useState(false);
   let [qty, setQty] = useState(0);
+  const [open, setOpen] = React.useState(false);
   let dispatch = useDispatch();
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -67,6 +89,7 @@ export default function IMSCard(props) {
       color: "#ff3d47",
     },
   });
+
   let params = {
     title: title,
     actualprice: actualprice,
@@ -86,23 +109,32 @@ export default function IMSCard(props) {
     >
       <CardHeader title={title} />
       <CardMedia>
-        <Box sx={{ position: "relative" }}>
-          <CardMedia sx={{ height: "200px" }} component="img" image={photo} />
-          <Box
-            sx={{
-              position: "absolute",
-              alignItems: "flex-end",
-              color: "white",
-              top: 10,
-              left: "83%",
-              transform: "translateX(-51%)",
-            }}
-          >
-            <Stack spacing={2}>
-              <Chip label={sellingStatus} color="success" />
-            </Stack>
+        <Card
+          sx={{
+            width: "240px",
+            height: "200px",
+            alignItems: "center",
+            marginLeft: "50px",
+          }}
+        >
+          <Box sx={{ position: "relative" }}>
+            <CardMedia sx={{ height: "200px" }} component="img" image={photo} />
+            <Box
+              sx={{
+                position: "absolute",
+                alignItems: "flex-end",
+                color: "white",
+                top: 10,
+                left: "83%",
+                transform: "translateX(-51%)",
+              }}
+            >
+              <Stack spacing={2}>
+                <Chip label={sellingStatus} color="success" />
+              </Stack>
+            </Box>
           </Box>
-        </Box>
+        </Card>
       </CardMedia>
       <CardContent disableSpacing>
         <Stack direction="row" spacing={1}>
@@ -115,21 +147,25 @@ export default function IMSCard(props) {
           </Typography>
           <Chip label={dpoff} color="primary" />
         </Stack>
-        <br></br>
 
+        <Typography variant="h6" color="secendary" fontSize="bold">
+          <LocalShippingIcon /> Earliest Delivery : {delivery}
+        </Typography>
+        <br></br>
         <TextField
           label="qty"
-          variant="filled"
+          sx={{ width: "120px" }}
+          variant="outlined"
           color="success"
-          defaultValue="0"
+          defaultValue={1}
           value={qty}
           onChange={(e) => setQty(e.currentTarget.value)}
         />
 
         <IconButton
-          aria-label="cart "
           sx={{ color: "black" }}
           onClick={() => {
+            handleClick();
             dispatch(orderPlaced(params));
           }}
         >
@@ -139,6 +175,15 @@ export default function IMSCard(props) {
 
         <Rating name="half-rating" defaultValue={0} precision={0.5} />
         <IMSChip label={rating} color={color} />
+        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            {qty} {title}'s added in your cart!!
+          </Alert>
+        </Snackbar>
       </CardContent>
     </Card>
   );
