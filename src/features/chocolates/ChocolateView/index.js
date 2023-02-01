@@ -29,7 +29,8 @@ export default function ChocolateView() {
       actualprice: 200,
       offerprice: 149,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "40min",
     },
     {
       title: "Choclairs Chocolates",
@@ -38,6 +39,7 @@ export default function ChocolateView() {
       offerprice: 15,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "15min",
     },
     {
       title: "Dairy Milk Chocolates",
@@ -46,6 +48,7 @@ export default function ChocolateView() {
       offerprice: 89,
       sellingStatus: "Premium",
       rating: 4.5,
+      delivery: "20min",
     },
     {
       title: "Ferrerorocher Chocolates",
@@ -54,6 +57,7 @@ export default function ChocolateView() {
       offerprice: 289,
       sellingStatus: "Premium",
       rating: 4.5,
+      delivery: "40min",
     },
     {
       title: "Fuse Chocolates",
@@ -61,7 +65,8 @@ export default function ChocolateView() {
       actualprice: 30,
       offerprice: 25,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "15min",
     },
     {
       title: "Kitkat Chocolates",
@@ -69,7 +74,8 @@ export default function ChocolateView() {
       actualprice: 200,
       offerprice: 197,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "20min",
     },
     {
       title: "Mars Chocolates",
@@ -78,6 +84,7 @@ export default function ChocolateView() {
       offerprice: 139,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "30min",
     },
     {
       title: "Oreo Silk Chocolates",
@@ -85,7 +92,8 @@ export default function ChocolateView() {
       actualprice: 180,
       offerprice: 166,
       sellingStatus: "Premiem",
-      rating: 4,
+      rating: 4.0,
+      delivery: "20min",
     },
 
     {
@@ -95,6 +103,7 @@ export default function ChocolateView() {
       offerprice: 49,
       sellingStatus: "Premium",
       rating: 4.5,
+      delivery: "20min",
     },
     {
       title: "Toblerone Chocolates",
@@ -102,7 +111,8 @@ export default function ChocolateView() {
       actualprice: 25,
       offerprice: 19,
       sellingStatus: "Best Seller",
-      rating: 3,
+      rating: 3.0,
+      delivery: "40min",
     },
   ];
 
@@ -112,33 +122,29 @@ export default function ChocolateView() {
 
   return (
     <>
-      <Box sx={{ margin: "25px" }}>
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-          style={{ backgroundColor: "silver" }}
-        >
-          {chocolatesList.map((item) => {
-            return (
-              <Grid item display="flex" justifyContent="center" xs={4}>
-                <IMSCard
-                  title={item.title}
-                  photo={item.photo}
-                  ordername={ordername}
-                  offerprice={item.offerprice}
-                  actualprice={item.actualprice}
-                  sellingStatus={item.sellingStatus}
-                  rating={item.rating}
-                ></IMSCard>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Box>
-
-      <br />
-      <br />
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+        style={{ backgroundColor: "lightgrey" }}
+      >
+        {chocolatesList.map((item) => {
+          return (
+            <Grid item display="flex" justifyContent="center" xs={4}>
+              <IMSCard
+                title={item.title}
+                photo={item.photo}
+                ordername={ordername}
+                offerprice={item.offerprice}
+                actualprice={item.actualprice}
+                sellingStatus={item.sellingStatus}
+                rating={item.rating}
+                delivery={item.delivery}
+              ></IMSCard>
+            </Grid>
+          );
+        })}
+      </Grid>
     </>
   );
 }

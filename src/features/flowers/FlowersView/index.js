@@ -31,7 +31,8 @@ export default function FlowersView() {
       actualprice: 300,
       offerprice: 279,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "1hr",
     },
     {
       title: "Gerberas Flowers",
@@ -40,6 +41,7 @@ export default function FlowersView() {
       offerprice: 293,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "30min",
     },
     {
       title: "Light Rose Flowers",
@@ -48,6 +50,7 @@ export default function FlowersView() {
       offerprice: 395,
       sellingStatus: "Premium",
       rating: 4.5,
+      delivery: "1hr",
     },
     {
       title: "Mixed Flowers",
@@ -55,7 +58,8 @@ export default function FlowersView() {
       actualprice: 350,
       offerprice: 347,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "1hr",
     },
     {
       title: "MixRoses Flowers",
@@ -64,6 +68,7 @@ export default function FlowersView() {
       offerprice: 448,
       sellingStatus: "Premium",
       rating: 4.5,
+      delivery: "1hr 30min",
     },
     {
       title: "Pink Roses Flowers",
@@ -72,6 +77,7 @@ export default function FlowersView() {
       offerprice: 237,
       sellingStatus: "Best Seller",
       rating: 4.5,
+      delivery: "1hr 20 min",
     },
     {
       title: "Pink Villa Flowers",
@@ -79,7 +85,8 @@ export default function FlowersView() {
       actualprice: 150,
       offerprice: 147,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "30min",
     },
     {
       title: "Red Blossom Flowers",
@@ -88,6 +95,7 @@ export default function FlowersView() {
       offerprice: 169,
       sellingStatus: "Premium",
       rating: 4.5,
+      delivery: "2hr",
     },
     {
       title: "Rose Flowers",
@@ -95,7 +103,8 @@ export default function FlowersView() {
       actualprice: 100,
       offerprice: 96,
       sellingStatus: "Premium",
-      rating: 4,
+      rating: 4.0,
+      delivery: "30min",
     },
     {
       title: "Roses Flowers",
@@ -104,6 +113,7 @@ export default function FlowersView() {
       offerprice: 93,
       sellingStatus: "Best Seller",
       rating: 4.5,
+      delivery: "40min",
     },
     {
       title: "White Roses Flowers",
@@ -112,6 +122,7 @@ export default function FlowersView() {
       offerprice: 193,
       sellingStatus: "Best Seller",
       rating: 4.5,
+      delivery: "1hr",
     },
     {
       title: "Yellow Flowers",
@@ -120,6 +131,7 @@ export default function FlowersView() {
       offerprice: 147,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "20min",
     },
   ];
 
@@ -127,33 +139,30 @@ export default function FlowersView() {
 
   return (
     <>
-      <Box sx={{ margin: "25px" }}>
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-          style={{ backgroundColor: "silver" }}
-        >
-          {flowersList.map((item) => {
-            return (
-              <Grid item display="flex" justifyContent="center" xs={4}>
-                <IMSCard
-                  title={item.title}
-                  photo={item.photo}
-                  ordername={ordername}
-                  offerprice={item.offerprice}
-                  actualprice={item.actualprice}
-                  sellingStatus={item.sellingStatus}
-                  rating={item.rating}
-                  order={ordered}
-                ></IMSCard>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Box>
-
-      <br />
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+        style={{ backgroundColor: "lightgray" }}
+      >
+        {flowersList.map((item) => {
+          return (
+            <Grid item display="flex" justifyContent="center" xs={4}>
+              <IMSCard
+                title={item.title}
+                photo={item.photo}
+                ordername={ordername}
+                offerprice={item.offerprice}
+                actualprice={item.actualprice}
+                sellingStatus={item.sellingStatus}
+                rating={item.rating}
+                order={ordered}
+                delivery={item.delivery}
+              ></IMSCard>
+            </Grid>
+          );
+        })}
+      </Grid>
     </>
   );
 }

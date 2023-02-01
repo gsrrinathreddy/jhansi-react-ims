@@ -13,14 +13,17 @@ import Chocolates from "./pages/Chocolates";
 import Gifts from "./pages/Gifts";
 import CartPage from "./pages/CartPage";
 import Landingpage from "./pages/Landingpage";
+import NotFound from "./pages/NotFound";
+import Profile from "./pages/Profile";
+import Account from "./pages/Account";
+import Dashboard from "./pages/Dashboard";
+import Logout from "./pages/Logout";
 function App() {
   let p1 = ["Cakes", "IceCreams", "Flowers", "Chocolates", "Gifts"];
   let p2 = ["Profile", "Account", "Dashboard", "Logout"];
-  //let noOfCakes = useSelector((state)=>state.cake.numOfCakes);
-  //let noOfIcecream = useSelector((state)=>state.icecream.numOfIcecream);
+
   return (
     <div className="App">
-      <h1>Bakery Store </h1>
       <BrowserRouter>
         <IMSNavbar pages={p1} settings={p2} />
         <Routes>
@@ -30,15 +33,12 @@ function App() {
           <Route path="/Chocolates" element={<Chocolates />} />
           <Route path="/Gifts" element={<Gifts />} />
           <Route path="/CartPage" element={<CartPage />} />
-          <Route path="/" element={<Gifts />} />
-
-          {/*<h4>No Of Cakes
-                   <CartComponent badgeContent = {noOfCakes}/></h4>
-                   <CakeView/>
-                   <h4>No Of IceCreams
-                   <CartComponent badgeContent = {noOfIcecream}/> 
-                   </h4>
-                   <IcecreamView/>*/}
+          <Route path="/" element={<Flowers />} />
+          <Route path="/*" element={<NotFound />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Account" element={<Account />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/Logout" element={<Logout />} />
         </Routes>
       </BrowserRouter>
     </div>

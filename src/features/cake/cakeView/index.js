@@ -41,6 +41,7 @@ export default function CakeView() {
       actualprice: 200,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "today",
     },
     {
       title: "Chocolate Cake",
@@ -80,7 +81,7 @@ export default function CakeView() {
       offerprice: 250,
       actualprice: 300,
       sellingStatus: "Premium",
-      rating: 4,
+      rating: 4.0,
     },
     {
       title: "Kitkat Cake",
@@ -90,10 +91,6 @@ export default function CakeView() {
       sellingStatus: "Best Seller",
       rating: 3.5,
     },
-    //{
-    // title:<h1>Disgined Cake</h1>,
-    // photo:disginedcake
-    //},
 
     {
       title: "Creamy Cake",
@@ -109,7 +106,7 @@ export default function CakeView() {
       offerprice: 450,
       actualprice: 490,
       sellingStatus: "Premium",
-      rating: 3,
+      rating: 3.0,
     },
     {
       title: "Chocoslice Cake",
@@ -181,7 +178,7 @@ export default function CakeView() {
       offerprice: 180,
       actualprice: 230,
       sellingStatus: "Premium",
-      rating: 5,
+      rating: 5.0,
     },
     {
       title: "Chocoball Cake",
@@ -193,20 +190,6 @@ export default function CakeView() {
     },
   ];
 
-  // {*/const [open, setOpen] = React.useState(false);
-
-  // const handleClick = () => {
-  //     dispatch(ordered())
-  //   setOpen(true);
-  // };
-
-  // const handleClose = (event, reason) => {
-  //   if (reason === 'clickaway') {
-  //     return;
-  //   }
-
-  //   setOpen(false);
-  // }*/}
   let ordername = "cake";
 
   return (
@@ -215,19 +198,11 @@ export default function CakeView() {
         container
         spacing={{ xs: 2, md: 2 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
-        style={{ backgroundColor: "silver" }}
+        style={{ backgroundColor: "lightgray" }}
       >
         {cakeList.map((item) => {
           return (
-            <Grid
-              item
-              display="flex"
-              justifyContent="center"
-              xs={4}
-              sm={4}
-              md={4}
-              pt={4}
-            >
+            <Grid item display="flex" justifyContent="center" xs={4}>
               <IMSCard
                 title={item.title}
                 photo={item.photo}
@@ -237,23 +212,12 @@ export default function CakeView() {
                 sellingStatus={item.sellingStatus}
                 rating={item.rating}
                 order={ordered}
+                delivery={item.delivery}
               ></IMSCard>
             </Grid>
           );
         })}
       </Grid>
-
-      {/*<Button variant="contained" onClick={handleClick}>
-               Order Cakes
-           </Button>*/}
-
-      {/*<Button variant='contained' 
-                onClick={()=>{
-                    dispatch(restocked(10))
-                    
-                }}>
-                Restock Cakes
-            </Button>*/}
     </>
   );
 }

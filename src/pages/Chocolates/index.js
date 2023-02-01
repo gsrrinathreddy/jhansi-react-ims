@@ -1,15 +1,26 @@
 import { useSelector } from "react-redux";
 import ChocolateView from "../../features/chocolates/ChocolateView/index";
-export default function Chocolates() {
-  const noOfChocolates = useSelector(
-    (state) => state.chocolates.numOfChocolates
-  );
-  console.log("no of chocolates", noOfChocolates);
+import Box from "@mui/material/Box";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import IMSDialog from "../../components/IMSDialog";
 
+export default function Chocolates() {
   return (
     <>
-      {/* <h3> Number of Chocolates : {(noOfChocolates<order) ? 'Out of stock' : noOfChocolates } </h3> */}
       <ChocolateView />
+      <Box
+        sx={{ backgroundColor: "lightgray" }}
+        justifyContent="space-between"
+        pt={5}
+      >
+        <IMSDialog />
+        <h1>Contact with Us :</h1>
+        <InstagramIcon></InstagramIcon>
+        <FacebookIcon></FacebookIcon>
+        <LinkedInIcon></LinkedInIcon>
+      </Box>
     </>
   );
 }

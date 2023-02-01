@@ -30,7 +30,8 @@ export default function GiftView() {
       actualprice: 300,
       offerprice: 293,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "Tommorow",
     },
     {
       title: "Cashew Combo Gift",
@@ -39,6 +40,7 @@ export default function GiftView() {
       offerprice: 497,
       sellingStatus: "Best Seller",
       rating: 4.5,
+      delivery: "Today",
     },
     {
       title: "Ceramic Mug Gift",
@@ -47,6 +49,7 @@ export default function GiftView() {
       offerprice: 297,
       sellingStatus: "Premium",
       rating: 3.5,
+      delivery: "Today",
     },
     {
       title: "Couple Lamp Gift",
@@ -55,6 +58,7 @@ export default function GiftView() {
       offerprice: 498,
       sellingStatus: "Best Seller",
       rating: 4.5,
+      delivery: "Tommorow",
     },
     {
       title: "Crystal Tree Gift",
@@ -62,7 +66,8 @@ export default function GiftView() {
       actualprice: 200,
       offerprice: 197,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "Today",
     },
     {
       title: "Glass Gift ",
@@ -71,6 +76,7 @@ export default function GiftView() {
       offerprice: 148,
       sellingStatus: "Premium",
       rating: 3.5,
+      delivery: "Day After Tommorow",
     },
     {
       title: "Light Lamp Gift",
@@ -78,7 +84,8 @@ export default function GiftView() {
       actualprice: 100,
       offerprice: 98,
       sellingStatus: "Premium",
-      rating: 3,
+      rating: 3.0,
+      delivery: "Today",
     },
 
     {
@@ -88,6 +95,7 @@ export default function GiftView() {
       offerprice: 348,
       sellingStatus: "Premium",
       rating: 2.5,
+      delivery: "Tommorow",
     },
     {
       title: "Lord Krishna Gift",
@@ -95,7 +103,8 @@ export default function GiftView() {
       actualprice: 400,
       offerprice: 396,
       sellingStatus: "Best Seller",
-      rating: 4,
+      rating: 4.0,
+      delivery: "Today",
     },
   ];
 
@@ -103,34 +112,30 @@ export default function GiftView() {
 
   return (
     <>
-      <Box sx={{ margin: "25px" }}>
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-          style={{ backgroundColor: "silver" }}
-        >
-          {giftList.map((item) => {
-            return (
-              <Grid item display="flex" justifyContent="center" xs={4}>
-                <IMSCard
-                  title={item.title}
-                  photo={item.photo}
-                  ordername={ordername}
-                  offerprice={item.offerprice}
-                  actualprice={item.actualprice}
-                  sellingStatus={item.sellingStatus}
-                  rating={item.rating}
-                  order={ordered}
-                ></IMSCard>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Box>
-
-      <br />
-      <br />
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+        style={{ backgroundColor: "lightgray" }}
+      >
+        {giftList.map((item) => {
+          return (
+            <Grid item display="flex" justifyContent="center" xs={4}>
+              <IMSCard
+                title={item.title}
+                photo={item.photo}
+                ordername={ordername}
+                offerprice={item.offerprice}
+                actualprice={item.actualprice}
+                sellingStatus={item.sellingStatus}
+                rating={item.rating}
+                order={ordered}
+                delivery={item.delivery}
+              ></IMSCard>
+            </Grid>
+          );
+        })}
+      </Grid>
     </>
   );
 }
