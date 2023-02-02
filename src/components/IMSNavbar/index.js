@@ -17,6 +17,9 @@ import IMSSearch from "../IMSSearch";
 import CartComponent from "../CartComponent";
 import { useSelector } from "react-redux";
 import CartPage from "../../pages/CartPage";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { color } from "@mui/system";
+import { NavLink } from "react-router-dom";
 
 //const pages = ['Cakes', 'IceCreams', 'Flowers','Chocolates','Gifts','Plants'];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -48,6 +51,20 @@ function IMSNavbar(props) {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+  const navLinkStyles = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+      textDecoration: "none",
+      textTransform: "none",
+      my: 2,
+      fontSize: isActive ? "18px" : "16px",
+      display: "block",
+      color: isActive ? "pink" : "white",
+      fontWeight: isActive ? "bold" : "normal",
+      marginRight: "10px",
+      marginLeft: "10px",
+    };
   };
 
   return (
@@ -141,22 +158,39 @@ function IMSNavbar(props) {
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Link to={page} style={{ textDecoration: "none" }}>
-                <Button
+              <NavLink
+                to={page}
+                style={navLinkStyles}
+                onClick={handleCloseNavMenu}
+              >
+                {/* <Button }
                   key={page}
-                  onClick={handleCloseNavMenu}
+                 
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   {page}
-                </Button>
-              </Link>
+
+                </Button> */}
+                {page}
+              </NavLink>
             ))}
           </Box>
-          <Box sx={{ marginRight: "40px" }}>
+          <Box sx={{ marginRight: "5px", color: "black" }}>
             <Link to="CartPage">
-              <CartComponent badgeContent={sum} />
+              <IconButton aria-label="cart" color="black">
+                <CartComponent
+                  badgeContent={sum}
+                  CartIcon={<AddShoppingCartIcon />}
+                />
+              </IconButton>
             </Link>
           </Box>
+          <Link to="Delivery">
+            <IconButton>
+              <Avatar src="https://assets.winni.in/img/icons/2-hour.svg" />
+            </IconButton>
+          </Link>
+
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

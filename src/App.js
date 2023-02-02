@@ -18,6 +18,8 @@ import Profile from "./pages/Profile";
 import Account from "./pages/Account";
 import Dashboard from "./pages/Dashboard";
 import Logout from "./pages/Logout";
+import Delivery from "./pages/Delivery";
+
 function App() {
   let p1 = ["Cakes", "IceCreams", "Flowers", "Chocolates", "Gifts"];
   let p2 = ["Profile", "Account", "Dashboard", "Logout"];
@@ -39,6 +41,8 @@ function App() {
           <Route path="/Account" element={<Account />} />
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Logout" element={<Logout />} />
+          <Route path="/CartPage/Delivery" element={<Delivery />} />
+          <Route path="/h" element={<IceCreams />} />
         </Routes>
       </BrowserRouter>
     </div>

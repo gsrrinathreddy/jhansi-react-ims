@@ -16,7 +16,7 @@ import marschocolate from "../../../assets/mars.jpg";
 import oreosilkchocolates from "../../../assets/oreosilk.jpg";
 import snickerschocolate from "../../../assets/snickers.jpg";
 import tobleronechocolate from "../../../assets/Toblerone.jpg";
-
+import FastfoodIcon from "@mui/icons-material/Fastfood";
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -130,7 +130,15 @@ export default function ChocolateView() {
       >
         {chocolatesList.map((item) => {
           return (
-            <Grid item display="flex" justifyContent="center" xs={4}>
+            <Grid
+              item
+              display="flex"
+              justifyContent="center"
+              xs={4}
+              sm={4}
+              md={4}
+              pt={4}
+            >
               <IMSCard
                 title={item.title}
                 photo={item.photo}
@@ -140,6 +148,7 @@ export default function ChocolateView() {
                 sellingStatus={item.sellingStatus}
                 rating={item.rating}
                 delivery={item.delivery}
+                titleIcon={<FastfoodIcon />}
               ></IMSCard>
             </Grid>
           );

@@ -18,6 +18,7 @@ import vennila from "../../../assest-ice/vennila.jpg";
 import { Box } from "@mui/system";
 import IMSCard from "../../../components/IMSCard";
 import { useState } from "react";
+import IcecreamIcon from "@mui/icons-material/Icecream";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -130,7 +131,15 @@ export default function IcecreamView() {
       >
         {icecreamList.map((item) => {
           return (
-            <Grid item display="flex" justifyContent="center" xs={4}>
+            <Grid
+              item
+              display="flex"
+              justifyContent="center"
+              xs={4}
+              sm={4}
+              md={4}
+              pt={4}
+            >
               <IMSCard
                 title={item.title}
                 photo={item.photo}
@@ -141,6 +150,7 @@ export default function IcecreamView() {
                 rating={item.rating}
                 order={ordered}
                 delivery={item.delivery}
+                titleIcon={<IcecreamIcon />}
               ></IMSCard>
             </Grid>
           );

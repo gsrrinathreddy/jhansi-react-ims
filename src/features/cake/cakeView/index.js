@@ -26,6 +26,7 @@ import creamycake from "../../../assets/cake10.jpg";
 import chocoballcake from "../../../assets/cake9.jpg";
 import { Grid } from "@mui/material";
 import qty from "../../../components/IMSCard";
+import CakeIcon from "@mui/icons-material/Cake";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -50,6 +51,7 @@ export default function CakeView() {
       actualprice: 250,
       sellingStatus: "Best Seller",
       rating: 4.5,
+      delivery: "Today",
     },
     {
       title: "Wedding Cake",
@@ -58,6 +60,7 @@ export default function CakeView() {
       actualprice: 600,
       sellingStatus: "Premium",
       rating: 4.5,
+      delivery: "Today",
     },
     {
       title: "Dark Fantacy Cake",
@@ -66,6 +69,7 @@ export default function CakeView() {
       actualprice: 400,
       sellingStatus: "Best Seller",
       rating: 4.5,
+      delivery: "Today",
     },
     {
       title: "Choco Vaneela Cake",
@@ -74,6 +78,7 @@ export default function CakeView() {
       actualprice: 400,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "Today",
     },
     {
       title: "Pineapple Cake",
@@ -82,6 +87,7 @@ export default function CakeView() {
       actualprice: 300,
       sellingStatus: "Premium",
       rating: 4.0,
+      delivery: "Today",
     },
     {
       title: "Kitkat Cake",
@@ -90,6 +96,7 @@ export default function CakeView() {
       actualprice: 250,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "Today",
     },
 
     {
@@ -99,6 +106,7 @@ export default function CakeView() {
       actualprice: 260,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "Today",
     },
     {
       title: "Panda Cake",
@@ -107,6 +115,7 @@ export default function CakeView() {
       actualprice: 490,
       sellingStatus: "Premium",
       rating: 3.0,
+      delivery: "Today",
     },
     {
       title: "Chocoslice Cake",
@@ -115,6 +124,7 @@ export default function CakeView() {
       actualprice: 610,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "Today",
     },
     {
       title: "Anniversary Cake",
@@ -123,6 +133,7 @@ export default function CakeView() {
       actualprice: 600,
       sellingStatus: "Premium",
       rating: 4.5,
+      delivery: "Today",
     },
     {
       title: "Oreo Cake",
@@ -131,6 +142,7 @@ export default function CakeView() {
       actualprice: 300,
       sellingStatus: "Best Seller",
       rating: 4.5,
+      delivery: "Today",
     },
     {
       title: "Kitty Cake",
@@ -139,6 +151,7 @@ export default function CakeView() {
       actualprice: 300,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "Today",
     },
     {
       title: "Cindrella Cake",
@@ -147,6 +160,7 @@ export default function CakeView() {
       actualprice: 220,
       sellingStatus: "Best Seller",
       rating: 4.5,
+      delivery: "Today",
     },
     {
       title: "Gems Cake",
@@ -155,6 +169,7 @@ export default function CakeView() {
       actualprice: 420,
       sellingStatus: "Premium",
       rating: 3.5,
+      delivery: "Today",
     },
     {
       title: "Sprinkles Cake",
@@ -163,6 +178,7 @@ export default function CakeView() {
       actualprice: 400,
       sellingStatus: "Premium",
       rating: 3.5,
+      delivery: "Today",
     },
     {
       title: "Redvilvet Cake",
@@ -171,6 +187,7 @@ export default function CakeView() {
       actualprice: 700,
       sellingStatus: "Best Seller",
       rating: 4.5,
+      delivery: "Today",
     },
     {
       title: "Dark Forest Cake",
@@ -179,6 +196,7 @@ export default function CakeView() {
       actualprice: 230,
       sellingStatus: "Premium",
       rating: 5.0,
+      delivery: "Today",
     },
     {
       title: "Chocoball Cake",
@@ -187,6 +205,7 @@ export default function CakeView() {
       actualprice: 300,
       sellingStatus: "Best Seller",
       rating: 3.5,
+      delivery: "Today",
     },
   ];
 
@@ -202,7 +221,15 @@ export default function CakeView() {
       >
         {cakeList.map((item) => {
           return (
-            <Grid item display="flex" justifyContent="center" xs={4}>
+            <Grid
+              item
+              display="flex"
+              justifyContent="center"
+              xs={4}
+              sm={4}
+              md={4}
+              pt={4}
+            >
               <IMSCard
                 title={item.title}
                 photo={item.photo}
@@ -213,6 +240,7 @@ export default function CakeView() {
                 rating={item.rating}
                 order={ordered}
                 delivery={item.delivery}
+                titleIcon={<CakeIcon />}
               ></IMSCard>
             </Grid>
           );
