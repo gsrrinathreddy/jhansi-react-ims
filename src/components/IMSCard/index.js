@@ -9,7 +9,7 @@ import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { blueGrey, red } from "@mui/material/colors";
+import { red, teal } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -30,6 +30,12 @@ import { ordered as flowersorder } from "../../features/flowers/flowerSlice";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import Button from "@mui/material/Button";
+import { width } from "@mui/system";
+import CakeIcon from "@mui/icons-material/Cake";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -60,6 +66,7 @@ export default function IMSCard(props) {
   let dpoff = discountedPercentage + "% off ";
   let orderPlaced = props.order;
   let delivery = props.delivery;
+  let titleIcon = props.titleIcon;
   const [expanded, setExpanded] = React.useState(false);
   let [qty, setQty] = useState(0);
   const [open, setOpen] = React.useState(false);
@@ -100,32 +107,39 @@ export default function IMSCard(props) {
   return (
     <Card
       sx={{
-        maxWidth: 360,
+        maxWidth: 345,
         marginLeft: "20px",
         bgcolor: "beige",
         marginRight: "20px",
         marginTop: "40px",
       }}
     >
-      <CardHeader title={title} />
-      <CardMedia>
+      <CardMedia sx={{ height: 250 }}>
+        <CardHeader
+          title={title}
+          avatar={
+            <Avatar sx={{ color: red[500] }} aria-label="recipe">
+              {titleIcon}
+            </Avatar>
+          }
+        ></CardHeader>
         <Card
           sx={{
-            width: "240px",
+            width: "300px",
+            marginLeft: "20px",
+            marginRight: "40px",
             height: "200px",
-            alignItems: "center",
-            marginLeft: "50px",
           }}
         >
           <Box sx={{ position: "relative" }}>
-            <CardMedia sx={{ height: "200px" }} component="img" image={photo} />
+            <CardMedia component="img" height="200" image={photo} />
             <Box
               sx={{
                 position: "absolute",
                 alignItems: "flex-end",
                 color: "white",
-                top: 10,
-                left: "83%",
+                top: 0,
+                left: "85%",
                 transform: "translateX(-51%)",
               }}
             >
@@ -136,45 +150,63 @@ export default function IMSCard(props) {
           </Box>
         </Card>
       </CardMedia>
+      <br></br>
       <CardContent disableSpacing>
         <Stack direction="row" spacing={1}>
           <Typography variant="h4">₹{offerprice}</Typography>
           <Typography
-            variant="h5"
+            variant="h6"
             style={{ textDecorationLine: "line-through" }}
           >
             ₹{actualprice}
           </Typography>
-          <Chip label={dpoff} color="primary" />
+          <Chip label={dpoff} color="primary">
+            <LocalOfferIcon />
+          </Chip>
         </Stack>
 
-        <Typography variant="h6" color="secendary" fontSize="bold">
+        <Typography variant="body3" color="black" fontStyle="oblique">
           <LocalShippingIcon /> Earliest Delivery : {delivery}
+          <br></br>
         </Typography>
         <br></br>
         <TextField
           label="qty"
-          sx={{ width: "120px" }}
+          sx={{
+            width: "100px",
+            height: "30px",
+            size: "small",
+            id: "outlined-basic",
+          }}
           variant="outlined"
-          color="success"
           defaultValue={1}
           value={qty}
           onChange={(e) => setQty(e.currentTarget.value)}
-        />
-
-        <IconButton
+        >
+          <br></br>
+        </TextField>
+        <Button
+          variant="contained"
+          color="secondary"
           sx={{ color: "black" }}
           onClick={() => {
             handleClick();
+
             dispatch(orderPlaced(params));
           }}
         >
           Add
-        </IconButton>
-        <CartComponent badgeContent={qty} />
+          <CartComponent badgeContent={qty} CartIcon={<LocalMallIcon />} />
+          <br></br>
+        </Button>
+        <Button variant="contained" color="error">
+          BUY Now
+        </Button>
 
-        <Rating name="half-rating" defaultValue={0} precision={0.5} />
+        <br></br>
         <IMSChip label={rating} color={color} />
+        <Rating name="half-rating" defaultValue={0} precision={0.5} />
+
         <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
           <Alert
             onClose={handleClose}

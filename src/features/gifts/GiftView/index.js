@@ -7,7 +7,7 @@ import MuiAlert from "@mui/material/Alert";
 import IMSCard from "../../../components/IMSCard";
 import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
-
+import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import bullockcartgift from "../../../assets/bullockcart.jpg";
 import cashewcombogift from "../../../assets/cashewcombo.jpg";
 import ceramicmuggift from "../../../assets/ceramicmug.jpg";
@@ -120,7 +120,15 @@ export default function GiftView() {
       >
         {giftList.map((item) => {
           return (
-            <Grid item display="flex" justifyContent="center" xs={4}>
+            <Grid
+              item
+              display="flex"
+              justifyContent="center"
+              xs={4}
+              sm={4}
+              md={4}
+              pt={4}
+            >
               <IMSCard
                 title={item.title}
                 photo={item.photo}
@@ -131,6 +139,7 @@ export default function GiftView() {
                 rating={item.rating}
                 order={ordered}
                 delivery={item.delivery}
+                titleIcon={<CardGiftcardIcon />}
               ></IMSCard>
             </Grid>
           );

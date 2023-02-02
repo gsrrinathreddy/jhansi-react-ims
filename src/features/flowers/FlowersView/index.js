@@ -19,6 +19,7 @@ import rose from "../../../assets/rose.jpg";
 import roses from "../../../assets/roses.jpg";
 import whiteroses from "../../../assets/whiteroses.jpg";
 import yellow from "../../../assets/yellow.jpg";
+import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -147,7 +148,15 @@ export default function FlowersView() {
       >
         {flowersList.map((item) => {
           return (
-            <Grid item display="flex" justifyContent="center" xs={4}>
+            <Grid
+              item
+              display="flex"
+              justifyContent="center"
+              xs={4}
+              sm={4}
+              md={4}
+              pt={4}
+            >
               <IMSCard
                 title={item.title}
                 photo={item.photo}
@@ -158,6 +167,7 @@ export default function FlowersView() {
                 rating={item.rating}
                 order={ordered}
                 delivery={item.delivery}
+                titleIcon={<LocalFloristIcon />}
               ></IMSCard>
             </Grid>
           );

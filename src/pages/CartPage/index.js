@@ -58,10 +58,14 @@ export default function CartPage() {
           </Grid>
         </Grid>
 
-        <Button onClick={() => navigate("order success")} variant="contained">
+        <Button onClick={() => navigate("Delivery")} variant="contained">
           Place Order
         </Button>
       </Box>
+      <br></br>
+      <Button onClick={() => navigate("/h")} variant="outlined">
+        Continue Shopping
+      </Button>
     </>
   );
 }
