@@ -19,6 +19,7 @@ import Account from "./pages/Account";
 import Dashboard from "./pages/Dashboard";
 import Logout from "./pages/Logout";
 import Delivery from "./pages/Delivery";
+import Login from "./pages/Login";
 
 function App() {
   let p1 = ["Cakes", "IceCreams", "Flowers", "Chocolates", "Gifts"];
@@ -37,6 +38,7 @@ function App() {
           <Route path="/CartPage" element={<CartPage />} />
           <Route path="/" element={<Flowers />} />
           <Route path="/*" element={<NotFound />} />
+          <Route path="/LogIn" element={<Login />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Account" element={<Account />} />
           <Route path="/Dashboard" element={<Dashboard />} />

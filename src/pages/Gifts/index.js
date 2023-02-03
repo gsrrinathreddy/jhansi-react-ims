@@ -10,7 +10,7 @@ export default function Gifts() {
     <>
       <GiftView />
       <Box
-        sx={{ backgroundColor: "lightgray" }}
+        sx={{ backgroundColor: "lightgrey" }}
         justifyContent="space-between"
         pt={5}
       >

@@ -217,7 +217,7 @@ export default function CakeView() {
         container
         spacing={{ xs: 2, md: 2 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
-        style={{ backgroundColor: "lightgray" }}
+        style={{ backgroundColor: "lightgrey" }}
       >
         {cakeList.map((item) => {
           return (
