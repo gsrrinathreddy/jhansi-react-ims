@@ -9,7 +9,7 @@ import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red, teal } from "@mui/material/colors";
+import { grey, pink, red, teal } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -36,6 +36,7 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import Button from "@mui/material/Button";
 import { width } from "@mui/system";
 import CakeIcon from "@mui/icons-material/Cake";
+import { useNavigate } from "react-router-dom";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -70,6 +71,8 @@ export default function IMSCard(props) {
   const [expanded, setExpanded] = React.useState(false);
   let [qty, setQty] = useState(0);
   const [open, setOpen] = React.useState(false);
+
+  const navigate = useNavigate();
   let dispatch = useDispatch();
 
   const handleClick = () => {
@@ -112,13 +115,14 @@ export default function IMSCard(props) {
         bgcolor: "beige",
         marginRight: "20px",
         marginTop: "40px",
+        cursor: "pointer",
       }}
     >
-      <CardMedia sx={{ height: 250 }}>
+      <CardMedia sx={{ height: 300 }}>
         <CardHeader
-          title={title}
+          title={<h2>{title}</h2>}
           avatar={
-            <Avatar sx={{ color: red[500] }} aria-label="recipe">
+            <Avatar sx={{ color: "black" }} aria-label="recipe">
               {titleIcon}
             </Avatar>
           }
@@ -150,7 +154,7 @@ export default function IMSCard(props) {
           </Box>
         </Card>
       </CardMedia>
-      <br></br>
+
       <CardContent disableSpacing>
         <Stack direction="row" spacing={1}>
           <Typography variant="h4">₹{offerprice}</Typography>
@@ -171,6 +175,10 @@ export default function IMSCard(props) {
         </Typography>
         <br></br>
         <TextField
+          type="number"
+          InputProps={{
+            inputProps: { min: 0 },
+          }}
           label="qty"
           sx={{
             width: "100px",
@@ -191,15 +199,18 @@ export default function IMSCard(props) {
           sx={{ color: "black" }}
           onClick={() => {
             handleClick();
-
-            dispatch(orderPlaced(params));
+            if (qty > 0) dispatch(orderPlaced(params));
           }}
         >
           Add
           <CartComponent badgeContent={qty} CartIcon={<LocalMallIcon />} />
           <br></br>
         </Button>
-        <Button variant="contained" color="error">
+        <Button
+          variant="contained"
+          color="error"
+          onClick={() => navigate("/CartPage/Delivery")}
+        >
           BUY Now
         </Button>
 

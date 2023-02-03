@@ -1,3 +1,10 @@
+import Login from "../Login";
+
 export default function Logout() {
-  return <>logout success</>;
+  return (
+    <>
+      <Login />
+      logout success
+    </>
+  );
 }

@@ -20,9 +20,7 @@ import CartPage from "../../pages/CartPage";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { color } from "@mui/system";
 import { NavLink } from "react-router-dom";
-
-//const pages = ['Cakes', 'IceCreams', 'Flowers','Chocolates','Gifts','Plants'];
-//const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import { useNavigate } from "react-router-dom";
 
 function IMSNavbar(props) {
   let noOfCakes = useSelector((state) => state.cake.noOfOrdered);
@@ -52,6 +50,7 @@ function IMSNavbar(props) {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const navigate = useNavigate();
   const navLinkStyles = ({ isActive }) => {
     return {
       fontWeight: isActive ? "bold" : "normal",
@@ -175,7 +174,7 @@ function IMSNavbar(props) {
               </NavLink>
             ))}
           </Box>
-          <Box sx={{ marginRight: "5px", color: "black" }}>
+          <Box sx={{ marginRight: "2px" }} color="black">
             <Link to="CartPage">
               <IconButton aria-label="cart" color="black">
                 <CartComponent
@@ -185,9 +184,11 @@ function IMSNavbar(props) {
               </IconButton>
             </Link>
           </Box>
-          <Link to="Delivery">
+          <Link to="CartPage/Delivery">
             <IconButton>
-              <Avatar src="https://assets.winni.in/img/icons/2-hour.svg" />
+              <Tooltip title="delivery">
+                <Avatar src="https://icon-library.com/images/icon-delivery/icon-delivery-16.jpg" />
+              </Tooltip>
             </IconButton>
           </Link>
 
@@ -196,7 +197,7 @@ function IMSNavbar(props) {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar
                   alt="Jhansi"
-                  src="https://img.freepik.com/premium-vector/female-baker_82446-24.jpg?w=2000"
+                  src="https://static.thenounproject.com/png/207093-200.png"
                 />
               </IconButton>
             </Tooltip>
@@ -225,6 +226,15 @@ function IMSNavbar(props) {
                 </Link>
               ))}
             </Menu>
+          </Box>
+          <Box>
+            <Button
+              color="inherit"
+              variant="text"
+              onClick={() => navigate("Login")}
+            >
+              LogIn
+            </Button>
           </Box>
         </Toolbar>
       </Container>

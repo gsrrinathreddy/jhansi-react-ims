@@ -10,7 +10,7 @@ export default function Flowers() {
     <>
       <FlowersView />
       <Box
-        sx={{ backgroundColor: "lightgray" }}
+        sx={{ backgroundColor: "lightgrey" }}
         justifyContent="space-between"
         pt={5}
       >

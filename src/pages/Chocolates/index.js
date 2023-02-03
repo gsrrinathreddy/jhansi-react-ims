@@ -11,7 +11,7 @@ export default function Chocolates() {
     <>
       <ChocolateView />
       <Box
-        sx={{ backgroundColor: "lightgray" }}
+        sx={{ backgroundColor: "lightgrey" }}
         justifyContent="space-between"
         pt={5}
       >

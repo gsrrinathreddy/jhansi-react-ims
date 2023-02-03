@@ -1,27 +1,18 @@
-import { Grid } from "@mui/material";
-import TextField from "@mui/material/TextField";
+import * as React from "react";
+import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import EditIcon from "@mui/icons-material/Edit";
-export default function Profile() {
-  return (
-    <>
-      <h2>
-        Personal Details:
-        <Button variant="outlined">
-          Edit
-          <EditIcon />
-        </Button>
-      </h2>
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 
-      <Grid
-        container
-        spacing={3}
-        sx={{ width: "600px" }}
-        marginRight="100px"
-        marginLeft="400px"
-      >
-        <Grid item xs={6}>
+export default function AddressForm() {
+  return (
+    <React.Fragment>
+      <Typography variant="h6" gutterBottom>
+        Shipping address
+      </Typography>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={6}>
           <TextField
             required
             id="firstName"
@@ -32,7 +23,7 @@ export default function Profile() {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <TextField
             required
             id="lastName"
@@ -43,7 +34,7 @@ export default function Profile() {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           <TextField
             required
             id="address1"
@@ -54,7 +45,7 @@ export default function Profile() {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           <TextField
             id="address2"
             name="address2"
@@ -64,7 +55,7 @@ export default function Profile() {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <TextField
             required
             id="city"
@@ -75,7 +66,7 @@ export default function Profile() {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <TextField
             id="state"
             name="state"
@@ -84,7 +75,7 @@ export default function Profile() {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <TextField
             required
             id="zip"
@@ -95,7 +86,7 @@ export default function Profile() {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <TextField
             required
             id="country"
@@ -106,59 +97,15 @@ export default function Profile() {
             variant="standard"
           />
         </Grid>
-      </Grid>
-      <Typography variant="h6" gutterBottom>
-        <h3>Payment method:</h3>
-      </Typography>
-      <Grid
-        container
-        spacing={3}
-        sx={{ width: "600px" }}
-        marginRight="100px"
-        marginLeft="400px"
-      >
-        <Grid item xs={6}>
-          <TextField
-            required
-            id="cardName"
-            label="Name on card"
-            fullWidth
-            autoComplete="cc-name"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={6}>
-          <TextField
-            required
-            id="cardNumber"
-            label="Card number"
-            fullWidth
-            autoComplete="cc-number"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={6}>
-          <TextField
-            required
-            id="expDate"
-            label="Expiry date"
-            fullWidth
-            autoComplete="cc-exp"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={6}>
-          <TextField
-            required
-            id="cvv"
-            label="CVV"
-            helperText="Last three digits on signature strip"
-            fullWidth
-            autoComplete="cc-csc"
-            variant="standard"
+        <Grid item xs={12}>
+          <FormControlLabel
+            control={
+              <Checkbox color="secondary" name="saveAddress" value="yes" />
+            }
+            label="Use this address for payment details"
           />
         </Grid>
       </Grid>
-    </>
+    </React.Fragment>
   );
 }
