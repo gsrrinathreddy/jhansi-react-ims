@@ -94,7 +94,7 @@ function IMSNavbar(props) {
             BAKERY
           </Typography>
           <Box sx={{ backgroundColor: "none" }}>
-            <IMSSearch />
+            <IMSSearch></IMSSearch>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton

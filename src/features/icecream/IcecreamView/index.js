@@ -33,7 +33,7 @@ export default function IcecreamView() {
       actualprice: 90,
       offerprice: 87,
       sellingStatus: "Best Seller",
-      rating: 4.5,
+
       delivery: "40min",
     },
     {
@@ -42,7 +42,7 @@ export default function IcecreamView() {
       actualprice: 70,
       offerprice: 60,
       sellingStatus: "Premium",
-      rating: 4.0,
+
       delivery: "20min",
     },
     {
@@ -51,7 +51,7 @@ export default function IcecreamView() {
       actualprice: 50,
       offerprice: 47,
       sellingStatus: "Premium",
-      rating: 4.0,
+
       delivery: "30min",
     },
     {
@@ -60,7 +60,7 @@ export default function IcecreamView() {
       actualprice: 60,
       offerprice: 58,
       sellingStatus: "Premium",
-      rating: 3.5,
+
       delivery: "30min",
     },
     {
@@ -69,7 +69,7 @@ export default function IcecreamView() {
       actualprice: 70,
       offerprice: 65,
       sellingStatus: "Best Seller",
-      rating: 4.0,
+
       delivery: "40min",
     },
     {
@@ -78,7 +78,7 @@ export default function IcecreamView() {
       actualprice: 80,
       offerprice: 78,
       sellingStatus: "Best Seller",
-      rating: 4.0,
+
       delivery: "20min",
     },
     {
@@ -87,7 +87,7 @@ export default function IcecreamView() {
       actualprice: 50,
       offerprice: 46,
       sellingStatus: "Premium",
-      rating: 4.5,
+
       delivery: "30min",
     },
     {
@@ -96,7 +96,7 @@ export default function IcecreamView() {
       actualprice: 40,
       offerprice: 35,
       sellingStatus: "Best Seller",
-      rating: 3.5,
+
       delivery: "20min",
     },
     {
@@ -105,7 +105,7 @@ export default function IcecreamView() {
       actualprice: 35,
       offerprice: 32,
       sellingStatus: "Premium",
-      rating: 2.5,
+
       delivery: "15min",
     },
     {
@@ -114,7 +114,7 @@ export default function IcecreamView() {
       actualprice: 60,
       offerprice: 53,
       sellingStatus: "Best Seller",
-      rating: 4.0,
+
       delivery: "30min",
     },
   ];
@@ -147,7 +147,6 @@ export default function IcecreamView() {
                 actualprice={item.actualprice}
                 offerprice={item.offerprice}
                 sellingStatus={item.sellingStatus}
-                rating={item.rating}
                 order={ordered}
                 delivery={item.delivery}
                 titleIcon={<IcecreamIcon />}

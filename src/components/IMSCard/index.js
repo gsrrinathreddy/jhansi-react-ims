@@ -10,7 +10,6 @@ import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { grey, pink, red, teal } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -37,6 +36,7 @@ import Button from "@mui/material/Button";
 import { width } from "@mui/system";
 import CakeIcon from "@mui/icons-material/Cake";
 import { useNavigate } from "react-router-dom";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -71,6 +71,7 @@ export default function IMSCard(props) {
   const [expanded, setExpanded] = React.useState(false);
   let [qty, setQty] = useState(0);
   const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState(2);
 
   const navigate = useNavigate();
   let dispatch = useDispatch();
@@ -101,6 +102,7 @@ export default function IMSCard(props) {
   });
 
   let params = {
+    photo: photo,
     title: title,
     actualprice: actualprice,
     offerprice: offerprice,
@@ -168,7 +170,6 @@ export default function IMSCard(props) {
             <LocalOfferIcon />
           </Chip>
         </Stack>
-
         <Typography variant="body3" color="black" fontStyle="oblique">
           <LocalShippingIcon /> Earliest Delivery : {delivery}
           <br></br>
@@ -206,6 +207,7 @@ export default function IMSCard(props) {
           <CartComponent badgeContent={qty} CartIcon={<LocalMallIcon />} />
           <br></br>
         </Button>
+        {/* <FavoriteIcon /> */}
         <Button
           variant="contained"
           color="error"
@@ -213,11 +215,18 @@ export default function IMSCard(props) {
         >
           BUY Now
         </Button>
-
         <br></br>
-        <IMSChip label={rating} color={color} />
-        <Rating name="half-rating" defaultValue={0} precision={0.5} />
 
+        <IMSChip label={value} color={color} />
+        <Typography component="legend"></Typography>
+        <Rating
+          name="simple-controlled"
+          value={value}
+          precision={0.5}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+        />
         <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
           <Alert
             onClose={handleClose}

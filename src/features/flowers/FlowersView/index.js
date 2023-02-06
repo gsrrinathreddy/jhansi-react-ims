@@ -32,7 +32,7 @@ export default function FlowersView() {
       actualprice: 300,
       offerprice: 279,
       sellingStatus: "Best Seller",
-      rating: 4.0,
+
       delivery: "1hr",
     },
     {
@@ -41,7 +41,7 @@ export default function FlowersView() {
       actualprice: 350,
       offerprice: 293,
       sellingStatus: "Best Seller",
-      rating: 3.5,
+
       delivery: "30min",
     },
     {
@@ -50,7 +50,7 @@ export default function FlowersView() {
       actualprice: 400,
       offerprice: 395,
       sellingStatus: "Premium",
-      rating: 4.5,
+
       delivery: "1hr",
     },
     {
@@ -59,7 +59,7 @@ export default function FlowersView() {
       actualprice: 350,
       offerprice: 347,
       sellingStatus: "Best Seller",
-      rating: 4.0,
+
       delivery: "1hr",
     },
     {
@@ -68,7 +68,7 @@ export default function FlowersView() {
       actualprice: 450,
       offerprice: 448,
       sellingStatus: "Premium",
-      rating: 4.5,
+
       delivery: "1hr 30min",
     },
     {
@@ -77,7 +77,7 @@ export default function FlowersView() {
       actualprice: 250,
       offerprice: 237,
       sellingStatus: "Best Seller",
-      rating: 4.5,
+
       delivery: "1hr 20 min",
     },
     {
@@ -86,7 +86,7 @@ export default function FlowersView() {
       actualprice: 150,
       offerprice: 147,
       sellingStatus: "Best Seller",
-      rating: 4.0,
+
       delivery: "30min",
     },
     {
@@ -95,7 +95,7 @@ export default function FlowersView() {
       actualprice: 180,
       offerprice: 169,
       sellingStatus: "Premium",
-      rating: 4.5,
+
       delivery: "2hr",
     },
     {
@@ -104,7 +104,7 @@ export default function FlowersView() {
       actualprice: 100,
       offerprice: 96,
       sellingStatus: "Premium",
-      rating: 4.0,
+
       delivery: "30min",
     },
     {
@@ -113,7 +113,7 @@ export default function FlowersView() {
       actualprice: 99,
       offerprice: 93,
       sellingStatus: "Best Seller",
-      rating: 4.5,
+
       delivery: "40min",
     },
     {
@@ -122,7 +122,7 @@ export default function FlowersView() {
       actualprice: 199,
       offerprice: 193,
       sellingStatus: "Best Seller",
-      rating: 4.5,
+
       delivery: "1hr",
     },
     {
@@ -131,7 +131,7 @@ export default function FlowersView() {
       actualprice: 150,
       offerprice: 147,
       sellingStatus: "Best Seller",
-      rating: 3.5,
+
       delivery: "20min",
     },
   ];
@@ -164,7 +164,6 @@ export default function FlowersView() {
                 offerprice={item.offerprice}
                 actualprice={item.actualprice}
                 sellingStatus={item.sellingStatus}
-                rating={item.rating}
                 order={ordered}
                 delivery={item.delivery}
                 titleIcon={<LocalFloristIcon />}

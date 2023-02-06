@@ -20,6 +20,7 @@ import Dashboard from "./pages/Dashboard";
 import Logout from "./pages/Logout";
 import Delivery from "./pages/Delivery";
 import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 
 function App() {
   let p1 = ["Cakes", "IceCreams", "Flowers", "Chocolates", "Gifts"];
