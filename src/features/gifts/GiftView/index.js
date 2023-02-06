@@ -30,7 +30,7 @@ export default function GiftView() {
       actualprice: 300,
       offerprice: 293,
       sellingStatus: "Best Seller",
-      rating: 4.0,
+
       delivery: "Tommorow",
     },
     {
@@ -39,7 +39,7 @@ export default function GiftView() {
       actualprice: 500,
       offerprice: 497,
       sellingStatus: "Best Seller",
-      rating: 4.5,
+
       delivery: "Today",
     },
     {
@@ -48,7 +48,7 @@ export default function GiftView() {
       actualprice: 300,
       offerprice: 297,
       sellingStatus: "Premium",
-      rating: 3.5,
+
       delivery: "Today",
     },
     {
@@ -57,7 +57,7 @@ export default function GiftView() {
       actualprice: 500,
       offerprice: 498,
       sellingStatus: "Best Seller",
-      rating: 4.5,
+
       delivery: "Tommorow",
     },
     {
@@ -66,7 +66,7 @@ export default function GiftView() {
       actualprice: 200,
       offerprice: 197,
       sellingStatus: "Best Seller",
-      rating: 4.0,
+
       delivery: "Today",
     },
     {
@@ -75,7 +75,7 @@ export default function GiftView() {
       actualprice: 150,
       offerprice: 148,
       sellingStatus: "Premium",
-      rating: 3.5,
+
       delivery: "Day After Tommorow",
     },
     {
@@ -84,7 +84,7 @@ export default function GiftView() {
       actualprice: 100,
       offerprice: 98,
       sellingStatus: "Premium",
-      rating: 3.0,
+
       delivery: "Today",
     },
 
@@ -94,7 +94,7 @@ export default function GiftView() {
       actualprice: 350,
       offerprice: 348,
       sellingStatus: "Premium",
-      rating: 2.5,
+
       delivery: "Tommorow",
     },
     {
@@ -103,7 +103,7 @@ export default function GiftView() {
       actualprice: 400,
       offerprice: 396,
       sellingStatus: "Best Seller",
-      rating: 4.0,
+
       delivery: "Today",
     },
   ];
@@ -136,7 +136,6 @@ export default function GiftView() {
                 offerprice={item.offerprice}
                 actualprice={item.actualprice}
                 sellingStatus={item.sellingStatus}
-                rating={item.rating}
                 order={ordered}
                 delivery={item.delivery}
                 titleIcon={<CardGiftcardIcon />}

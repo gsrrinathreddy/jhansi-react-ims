@@ -81,6 +81,7 @@ export default function Profile() {
             name="state"
             label="State/Province/Region"
             fullWidth
+            autoComplete="shipping address-level2"
             variant="standard"
           />
         </Grid>

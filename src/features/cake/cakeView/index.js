@@ -4,14 +4,14 @@ import { Box, Button } from "@mui/material";
 import * as React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-import flowercake from "../../../assets/cake1.jpg";
-import chocolatecake from "../../../assets/cake2.jpg";
+import flowercake from "../../../assets/cake24.jpg";
+import creamcake from "../../../assets/cake25.jpg";
 import IMSCard from "../../../components/IMSCard";
-import weddingcake from "../../../assets/cake3.jpg";
-import darkfantacycake from "../../../assets/cake4.jpg";
-import chocovaneelacake from "../../../assets/cake5.jpg";
+import weddingcake from "../../../assets/cake21.jpg";
+import designercake from "../../../assets/cake22.jpg";
+import chocovaneelacake from "../../../assets/cake23.jpg";
 import pineapplecake from "../../../assets/cake6.jpg";
-import kitkatcake from "../../../assets/cake7.jpg";
+import cherrycake from "../../../assets/cake7.jpg";
 import pandacake from "../../../assets/cake11.jpg";
 import chocoslicecake from "../../../assets/cake12.jpg";
 import anniversarycake from "../../../assets/cake13.jpg";
@@ -22,8 +22,8 @@ import gemscake from "../../../assets/cake17.jpg";
 import darkforestcake from "../../../assets/cake18.jpg";
 import sprinklescake from "../../../assets/cake19.jpg";
 import redvilvetcake from "../../../assets/cake20.jpg";
-import creamycake from "../../../assets/cake10.jpg";
-import chocoballcake from "../../../assets/cake9.jpg";
+import pinkcreamcake from "../../../assets/cake10.jpg";
+import orangecake from "../../../assets/cake9.jpg";
 import { Grid } from "@mui/material";
 import qty from "../../../components/IMSCard";
 import CakeIcon from "@mui/icons-material/Cake";
@@ -41,16 +41,16 @@ export default function CakeView() {
       offerprice: 150,
       actualprice: 200,
       sellingStatus: "Best Seller",
-      rating: 3.5,
+
       delivery: "today",
     },
     {
-      title: "Chocolate Cake",
-      photo: chocolatecake,
+      title: "Cream Cake",
+      photo: creamcake,
       offerprice: 200,
       actualprice: 250,
       sellingStatus: "Best Seller",
-      rating: 4.5,
+
       delivery: "Today",
     },
     {
@@ -59,25 +59,25 @@ export default function CakeView() {
       offerprice: 500,
       actualprice: 600,
       sellingStatus: "Premium",
-      rating: 4.5,
+
       delivery: "Today",
     },
     {
-      title: "Dark Fantacy Cake",
-      photo: darkfantacycake,
+      title: "Designer Cake",
+      photo: designercake,
       offerprice: 300,
       actualprice: 400,
       sellingStatus: "Best Seller",
-      rating: 4.5,
+
       delivery: "Today",
     },
     {
-      title: "Choco Vaneela Cake",
+      title: "Cup Cake",
       photo: chocovaneelacake,
       offerprice: 350,
       actualprice: 400,
       sellingStatus: "Best Seller",
-      rating: 3.5,
+
       delivery: "Today",
     },
     {
@@ -86,26 +86,26 @@ export default function CakeView() {
       offerprice: 250,
       actualprice: 300,
       sellingStatus: "Premium",
-      rating: 4.0,
+
       delivery: "Today",
     },
     {
-      title: "Kitkat Cake",
-      photo: kitkatcake,
+      title: "Cherry Cake",
+      photo: cherrycake,
       offerprice: 200,
       actualprice: 250,
       sellingStatus: "Best Seller",
-      rating: 3.5,
+
       delivery: "Today",
     },
 
     {
-      title: "Creamy Cake",
-      photo: creamycake,
+      title: "Pink Cream Cake",
+      photo: pinkcreamcake,
       offerprice: 250,
       actualprice: 260,
       sellingStatus: "Best Seller",
-      rating: 3.5,
+
       delivery: "Today",
     },
     {
@@ -114,7 +114,7 @@ export default function CakeView() {
       offerprice: 450,
       actualprice: 490,
       sellingStatus: "Premium",
-      rating: 3.0,
+
       delivery: "Today",
     },
     {
@@ -123,7 +123,7 @@ export default function CakeView() {
       offerprice: 502,
       actualprice: 610,
       sellingStatus: "Best Seller",
-      rating: 3.5,
+
       delivery: "Today",
     },
     {
@@ -132,7 +132,7 @@ export default function CakeView() {
       offerprice: 550,
       actualprice: 600,
       sellingStatus: "Premium",
-      rating: 4.5,
+
       delivery: "Today",
     },
     {
@@ -141,7 +141,7 @@ export default function CakeView() {
       offerprice: 300,
       actualprice: 300,
       sellingStatus: "Best Seller",
-      rating: 4.5,
+
       delivery: "Today",
     },
     {
@@ -150,7 +150,7 @@ export default function CakeView() {
       offerprice: 180,
       actualprice: 300,
       sellingStatus: "Best Seller",
-      rating: 3.5,
+
       delivery: "Today",
     },
     {
@@ -159,7 +159,7 @@ export default function CakeView() {
       offerprice: 150,
       actualprice: 220,
       sellingStatus: "Best Seller",
-      rating: 4.5,
+
       delivery: "Today",
     },
     {
@@ -168,7 +168,7 @@ export default function CakeView() {
       offerprice: 340,
       actualprice: 420,
       sellingStatus: "Premium",
-      rating: 3.5,
+
       delivery: "Today",
     },
     {
@@ -177,7 +177,7 @@ export default function CakeView() {
       offerprice: 360,
       actualprice: 400,
       sellingStatus: "Premium",
-      rating: 3.5,
+
       delivery: "Today",
     },
     {
@@ -186,7 +186,7 @@ export default function CakeView() {
       offerprice: 500,
       actualprice: 700,
       sellingStatus: "Best Seller",
-      rating: 4.5,
+
       delivery: "Today",
     },
     {
@@ -195,16 +195,16 @@ export default function CakeView() {
       offerprice: 180,
       actualprice: 230,
       sellingStatus: "Premium",
-      rating: 5.0,
+
       delivery: "Today",
     },
     {
-      title: "Chocoball Cake",
-      photo: chocoballcake,
+      title: "Orange Cake",
+      photo: orangecake,
       offerprice: 150,
       actualprice: 300,
       sellingStatus: "Best Seller",
-      rating: 3.5,
+
       delivery: "Today",
     },
   ];
@@ -237,7 +237,6 @@ export default function CakeView() {
                 offerprice={item.offerprice}
                 actualprice={item.actualprice}
                 sellingStatus={item.sellingStatus}
-                rating={item.rating}
                 order={ordered}
                 delivery={item.delivery}
                 titleIcon={<CakeIcon />}
