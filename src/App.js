@@ -21,9 +21,11 @@ import Logout from "./pages/Logout";
 import Delivery from "./pages/Delivery";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import Favorites from "./pages/Favorites";
+import Users from "./pages/Users";
 
 function App() {
-  let p1 = ["Cakes", "IceCreams", "Flowers", "Chocolates", "Gifts"];
+  let p1 = ["Cakes", "IceCreams", "Flowers", "Chocolates", "Gifts", "Users"];
   let p2 = ["Profile", "Account", "Dashboard", "Logout"];
 
   return (
@@ -46,6 +48,9 @@ function App() {
           <Route path="/Logout" element={<Logout />} />
           <Route path="/CartPage/Delivery" element={<Delivery />} />
           <Route path="/h" element={<IceCreams />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/Favorites" element={<Favorites />} />
+          <Route path="/Users" element={<Users />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -21,6 +21,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { color } from "@mui/system";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 function IMSNavbar(props) {
   let noOfCakes = useSelector((state) => state.cake.noOfOrdered);
@@ -173,6 +174,13 @@ function IMSNavbar(props) {
                 {page}
               </NavLink>
             ))}
+          </Box>
+          <Box sx={{ marginLeft: "250px" }} color="black">
+            <Link to="Favorites">
+              <IconButton aria-label="favorite" color="black">
+                <Tooltip title="favorites">{<FavoriteIcon />}</Tooltip>
+              </IconButton>
+            </Link>
           </Box>
           <Box sx={{ marginRight: "2px" }} color="black">
             <Link to="CartPage">

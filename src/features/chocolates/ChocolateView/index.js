@@ -51,7 +51,7 @@ export default function ChocolateView() {
       delivery: "20min",
     },
     {
-      title: "Ferrerorocher Chocolates",
+      title: "Ferrerorocher",
       photo: ferrerorocherchocolates,
       actualprice: 299,
       offerprice: 289,

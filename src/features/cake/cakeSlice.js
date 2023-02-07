@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   numOfCakes: 50,
   noOfOrdered: 0,
+  numOfwishCakes: 0,
 };
 const cakeSlice = createSlice({
   name: "cake",
@@ -19,8 +20,11 @@ const cakeSlice = createSlice({
     restocked: (state, action) => {
       state.numOfCakes += action.payload;
     },
+    wishlist: (state, action) => {
+      state.numOfwishCakes += action.payload;
+    },
   },
 });
 
 export default cakeSlice.reducer;
-export const { ordered, restocked } = cakeSlice.actions;
+export const { ordered, restocked, wishlist } = cakeSlice.actions;

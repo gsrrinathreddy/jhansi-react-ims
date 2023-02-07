@@ -12,6 +12,7 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -42,7 +43,7 @@ export default function Login() {
       password: data.get("password"),
     });
   };
-
+  const navigate = useNavigate();
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
@@ -54,7 +55,7 @@ export default function Login() {
           md={7}
           sx={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1565975585223-4c92e19adc67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60)",
+              "url(https://s.tmimgcdn.com/scr/1600x1000/182900/cake-bakery-logo-design-template_182928-original.png)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -111,6 +112,7 @@ export default function Login() {
                 label="Remember me"
               />
               <Button
+                onClick={() => navigate("/Cakes")}
                 type="submit"
                 fullWidth
                 variant="contained"

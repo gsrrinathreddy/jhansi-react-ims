@@ -16,6 +16,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 export default function CartComponent(props) {
   let badgeContent = props.badgeContent;
   let CartIcon = props.CartIcon;
+
   return (
     <IconButton aria-label="cart" color="inherit">
       <Tooltip title="cart">
