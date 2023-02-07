@@ -68,11 +68,15 @@ export default function IMSCard(props) {
   let orderPlaced = props.order;
   let delivery = props.delivery;
   let titleIcon = props.titleIcon;
+  let addFav = props.addFav;
   const [expanded, setExpanded] = React.useState(false);
   let [qty, setQty] = useState(0);
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState(2);
-
+  const [active, setActive] = React.useState();
+  const handleClick1 = () => {
+    setActive(!active);
+  };
   const navigate = useNavigate();
   let dispatch = useDispatch();
 
@@ -108,6 +112,9 @@ export default function IMSCard(props) {
     offerprice: offerprice,
     qty: parseInt(qty),
   };
+  let param = {
+    title: title,
+  };
 
   return (
     <Card
@@ -129,6 +136,7 @@ export default function IMSCard(props) {
             </Avatar>
           }
         ></CardHeader>
+
         <Card
           sx={{
             width: "300px",
@@ -144,7 +152,7 @@ export default function IMSCard(props) {
                 position: "absolute",
                 alignItems: "flex-end",
                 color: "white",
-                top: 0,
+                top: 10,
                 left: "85%",
                 transform: "translateX(-51%)",
               }}
@@ -182,8 +190,8 @@ export default function IMSCard(props) {
           }}
           label="qty"
           sx={{
-            width: "100px",
-            height: "30px",
+            width: "70px",
+            height: "20px",
             size: "small",
             id: "outlined-basic",
           }}
@@ -197,7 +205,7 @@ export default function IMSCard(props) {
         <Button
           variant="contained"
           color="secondary"
-          sx={{ color: "black" }}
+          sx={{ color: "black", width: "90px" }}
           onClick={() => {
             handleClick();
             if (qty > 0) dispatch(orderPlaced(params));
@@ -207,7 +215,7 @@ export default function IMSCard(props) {
           <CartComponent badgeContent={qty} CartIcon={<LocalMallIcon />} />
           <br></br>
         </Button>
-        {/* <FavoriteIcon /> */}
+
         <Button
           variant="contained"
           color="error"
@@ -215,9 +223,23 @@ export default function IMSCard(props) {
         >
           BUY Now
         </Button>
+        <IconButton
+          aria-label="add to favorites"
+          onClick={() => {
+            {
+              dispatch(addFav(param));
+            }
+          }}
+        >
+          <FavoriteIcon
+            onClick={handleClick1}
+            style={{ color: active ? "red" : "GrayText" }}
+          />
+        </IconButton>
         <br></br>
 
         <IMSChip label={value} color={color} />
+
         <Typography component="legend"></Typography>
         <Rating
           name="simple-controlled"

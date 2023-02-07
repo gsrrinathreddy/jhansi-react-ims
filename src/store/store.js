@@ -6,6 +6,8 @@ import flowerReducer from "../features/flowers/flowerSlice";
 import chocolateReducer from "../features/chocolates/chocolateSlice";
 import giftReducer from "../features/gifts/GiftSlice";
 import cartReducer from "../features/cart/cartSlice";
+import favoriteReducer from "../features/Favorite/favoriteSlice";
+import usersReducer from "../features/Users/usersSlice";
 const store = configureStore({
   reducer: {
     cake: cakeReducer,
@@ -14,6 +16,8 @@ const store = configureStore({
     chocolates: chocolateReducer,
     gifts: giftReducer,
     cart: cartReducer,
+    favorite: favoriteReducer,
+    user: usersReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
